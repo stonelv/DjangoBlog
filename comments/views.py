@@ -1,12 +1,12 @@
 # Create your views here.
 from django.core.exceptions import ValidationError
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import get_object_or_404
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_protect
 from django.views.generic.edit import FormView
 
-from accounts.models import BlogUser
+from accounts.models import BlogUser, Notification
 from blog.models import Article
 from .forms import CommentForm
 from .models import Comment
@@ -52,14 +52,16 @@ class CommentPostView(FormView):
             comment.is_enable = True
         comment.author = author
 
+        parent_comment = None
         if form.cleaned_data['parent_comment_id']:
             parent_comment = Comment.objects.get(
                 pk=form.cleaned_data['parent_comment_id'])
             comment.parent_comment = parent_comment
 
-            # 发送评论回复通知
+        comment.save(True)
+        # 处理父评论，发送通知，使用保存后的comment.pk
+        if parent_comment:
             if parent_comment.author != author:
-                from accounts.models import Notification
                 title = _('Your comment has been replied')
                 content = _('%(username)s replied your comment: %(content)s') % {
                     'username': author.username,
@@ -74,8 +76,14 @@ class CommentPostView(FormView):
                     notification_type=Notification.NotificationType.COMMENT_REPLY,
                     target_url=target_url
                 )
-
-        comment.save(True)
+        if self.request.is_ajax():
+            return JsonResponse(
+                {
+                    'code': 1,
+                    'msg': _('comment success'),
+                    'comment_id': comment.pk
+                }
+            )
         return HttpResponseRedirect(
             "%s#div-comment-%d" %
             (article.get_absolute_url(), comment.pk))

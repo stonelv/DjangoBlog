@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
+from accounts.models import Notification
 
 # Register your models here.
 from .models import Article, Category, Tag, Links, SideBar, BlogSettings
@@ -85,7 +86,6 @@ class ArticlelAdmin(admin.ModelAdmin):
             original_obj = Article.objects.get(pk=obj.pk)
             if original_obj.status == 'd' and obj.status == 'p':
                 # 发送文章审核通过通知
-                from accounts.models import Notification, BlogUser
                 title = _('Your article has been published')
                 content = _('Your article "%(title)s" has been published successfully') % {
                     'title': obj.title
