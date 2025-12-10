@@ -25,4 +25,8 @@ urlpatterns = [re_path(r'^login/$',
                re_path(r'^forget_password_code/$',
                        views.ForgetPasswordEmailCode.as_view(),
                        name='forget_password_code'),
+               # Notifications
+               re_path(r'^notifications/$', views.notification_list, name='notification_list'),
+               re_path(r'^notifications/(?P<notification_id>\d+)/read/$', views.mark_notification_as_read, name='mark_notification_as_read'),
+               re_path(r'^notifications/mark-all-read/$', views.mark_all_as_read, name='mark_all_as_read'),
                ]

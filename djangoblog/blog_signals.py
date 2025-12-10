@@ -9,6 +9,7 @@ from django.core.mail import EmailMultiAlternatives
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+from accounts.models import Notification
 from comments.models import Comment
 from comments.utils import send_comment_email
 from djangoblog.spider_notify import SpiderNotify
@@ -108,6 +109,26 @@ def model_post_save_callback(
             delete_view_cache('article_comments', [str(instance.article.pk)])
 
             _thread.start_new_thread(send_comment_email, (instance,))
+            
+            # 发送评论回复通知
+            if instance.parent_comment:
+                parent_comment = instance.parent_comment
+                # 不要给自己发通知
+                if parent_comment.author != instance.author:
+                    site = get_current_site()
+                    article_url = f"https://{site.domain}{instance.article.get_absolute_url()}#div-comment-{instance.pk}"
+                    
+                    Notification.objects.create(
+                        recipient=parent_comment.author,
+                        sender=instance.author,
+                        title=_('Your comment has been replied'),
+                        content=_('%(sender)s replied to your comment: %(reply_content)s') % {
+                            'sender': instance.author.nickname or instance.author.username,
+                            'reply_content': instance.body[:50] + '...' if len(instance.body) > 50 else instance.body
+                        },
+                        notification_type=Notification.NotificationType.COMMENT_REPLY,
+                        target_url=article_url
+                    )
 
     if clearcache:
         cache.clear()

@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load account_tags %}
 
 <nav id="site-navigation" class="main-navigation" role="navigation">
     <div class="menu-%e8%8f%9c%e5%8d%95-container">
@@ -25,6 +26,17 @@
 
                 <a href="{% url "blog:archives" %}">{% trans 'Article archive' %}</a>
             </li>
+            {% if user.is_authenticated %}
+            <li class="menu-item menu-item-type-custom menu-item-object-custom float-right">
+                <a href="{% url 'accounts:notification_list' %}">
+                    <i class="far fa-bell"></i> {% trans 'Notifications' %}
+                    {% unread_notifications_count as unread_count %}
+                    {% if unread_count > 0 %}
+                        <span class="badge badge-danger badge-pill ml-1">{{ unread_count }}</span>
+                    {% endif %}
+                </a>
+            </li>
+            {% endif %}
         </ul>
     </div>
 </nav><!-- #site-navigation -->
