@@ -1,0 +1,216 @@
+{% extends 'share_layout/base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <div id="primary" class="site-content">
+        <div id="content" role="main">
+            <div class="page type-page status-publish hentry">
+                <header class="entry-header">
+                    <h1 class="entry-title">{% trans 'Notifications' %}</h1>
+                </header>
+
+                <div class="entry-content">
+                    <!-- 筛选和搜索 -->
+                    <div class="notification-filters">
+                        <div class="filter-buttons">
+                            <a href="{% url 'accounts:notification_list' %}" class="btn {% if not active_type %}active{% endif %}">
+                                {% trans 'All Notifications' %}
+                            </a>
+                            <a href="{% url 'accounts:notification_list' %}?type=comment_reply" class="btn {% if active_type == 'comment_reply' %}active{% endif %}">
+                                {% trans 'Comment Replies' %}
+                            </a>
+                            <a href="{% url 'accounts:notification_list' %}?type=article_approval" class="btn {% if active_type == 'article_approval' %}active{% endif %}">
+                                {% trans 'Article Approvals' %}
+                            </a>
+                            <a href="{% url 'accounts:notification_list' %}?type=system_notice" class="btn {% if active_type == 'system_notice' %}active{% endif %}">
+                                {% trans 'System Notices' %}
+                            </a>
+                        </div>
+                        
+                        <form method="get" action="{% url 'accounts:notification_list' %}" class="search-form">
+                            <input type="text" name="search" placeholder="{% trans 'Search notifications...' %}" value="{{ search_keyword|default:'' }}">
+                            <button type="submit">{% trans 'Search' %}</button>
+                        </form>
+                        
+                        <a href="{% url 'accounts:mark_all_as_read' %}" class="btn btn-secondary mark-all-read">
+                            {% trans 'Mark all as read' %}
+                        </a>
+                    </div>
+
+                    <!-- 通知列表 -->
+                    <div class="notifications-list">
+                        {% if notifications %}
+                            {% for notification in notifications %}
+                                <div class="notification-item {% if not notification.is_read %}unread{% endif %}">
+                                    <div class="notification-header">
+                                        <span class="notification-type">{{ notification.get_notification_type_display }}</span>
+                                        <span class="notification-time">{{ notification.create_time|date:"Y-m-d H:i" }}</span>
+                                    </div>
+                                    
+                                    <div class="notification-content">
+                                        <h3 class="notification-title">{{ notification.title }}</h3>
+                                        <p>{{ notification.content }}</p>
+                                        {% if notification.target_url %}
+                                            <a href="{{ notification.target_url }}" class="btn btn-small">{% trans 'View' %}</a>
+                                        {% endif %}
+                                        {% if not notification.is_read %}
+                                            <a href="{% url 'accounts:mark_notification_as_read' notification.id %}" class="btn btn-small mark-as-read">
+                                                {% trans 'Mark as read' %}
+                                            </a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="empty-notifications">
+                                <p>{% trans 'No notifications yet.' %}</p>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- 分页 -->
+                    {% if notifications.has_other_pages %}
+                        <div class="pagination">
+                            {% if notifications.has_previous %}
+                                <a href="?page={{ notifications.previous_page_number }}{% if active_type %}&type={{ active_type }}{% endif %}{% if search_keyword %}&search={{ search_keyword }}{% endif %}" class="prev">{% trans 'Previous' %}</a>
+                            {% endif %}
+                            
+                            {% for num in notifications.paginator.page_range %}
+                                {% if notifications.number == num %}
+                                    <span class="current">{{ num }}</span>
+                                {% else %}
+                                    <a href="?page={{ num }}{% if active_type %}&type={{ active_type }}{% endif %}{% if search_keyword %}&search={{ search_keyword }}{% endif %}">{{ num }}</a>
+                                {% endif %}
+                            {% endfor %}
+                            
+                            {% if notifications.has_next %}
+                                <a href="?page={{ notifications.next_page_number }}{% if active_type %}&type={{ active_type }}{% endif %}{% if search_keyword %}&search={{ search_keyword }}{% endif %}" class="next">{% trans 'Next' %}</a>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block compress_css %}
+    <style>
+        .notification-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        
+        .filter-buttons .btn {
+            margin-right: 5px;
+            padding: 5px 10px;
+            background: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .filter-buttons .btn.active {
+            background: #21759b;
+            color: white;
+            border-color: #21759b;
+        }
+        
+        .search-form {
+            margin-left: auto;
+            display: flex;
+            gap: 5px;
+        }
+        
+        .search-form input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .notification-item {
+            border: 1px solid #eee;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: white;
+        }
+        
+        .notification-item.unread {
+            border-left: 4px solid #21759b;
+            background: #f8f9fa;
+        }
+        
+        .notification-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .notification-type {
+            font-weight: bold;
+            color: #21759b;
+        }
+        
+        .notification-title {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 1.1em;
+        }
+        
+        .notification-content p {
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .btn-small {
+            padding: 4px 8px;
+            background: #21759b;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9em;
+            margin-right: 5px;
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+        }
+        
+        .empty-notifications {
+            text-align: center;
+            padding: 50px;
+            color: #666;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .pagination {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .pagination a, .pagination span {
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 0 2px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #21759b;
+        }
+        
+        .pagination span.current {
+            background: #21759b;
+            color: white;
+            border-color: #21759b;
+        }
+    </style>
+{% endblock %}

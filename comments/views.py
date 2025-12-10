@@ -57,6 +57,24 @@ class CommentPostView(FormView):
                 pk=form.cleaned_data['parent_comment_id'])
             comment.parent_comment = parent_comment
 
+            # 发送评论回复通知
+            if parent_comment.author != author:
+                from accounts.models import Notification
+                title = _('Your comment has been replied')
+                content = _('%(username)s replied your comment: %(content)s') % {
+                    'username': author.username,
+                    'content': comment.body[:50] + '...' if len(comment.body) > 50 else comment.body
+                }
+                target_url = f"{article.get_absolute_url()}#div-comment-{comment.pk}"
+                Notification.objects.create(
+                    recipient=parent_comment.author,
+                    sender=author,
+                    title=title,
+                    content=content,
+                    notification_type=Notification.NotificationType.COMMENT_REPLY,
+                    target_url=target_url
+                )
+
         comment.save(True)
         return HttpResponseRedirect(
             "%s#div-comment-%d" %

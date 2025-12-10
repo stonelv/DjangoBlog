@@ -1,11 +1,12 @@
 from django import forms
+from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth.forms import UsernameField
 from django.utils.translation import gettext_lazy as _
 
 # Register your models here.
-from .models import BlogUser
+from .models import BlogUser, Notification
 
 
 class BlogUserCreationForm(forms.ModelForm):
@@ -14,7 +15,7 @@ class BlogUserCreationForm(forms.ModelForm):
 
     class Meta:
         model = BlogUser
-        fields = ('email',)
+        fields = ('email', 'username', 'nickname')
 
     def clean_password2(self):
         # Check that the two password entries match
@@ -47,14 +48,42 @@ class BlogUserChangeForm(UserChangeForm):
 class BlogUserAdmin(UserAdmin):
     form = BlogUserChangeForm
     add_form = BlogUserCreationForm
-    list_display = (
-        'id',
-        'nickname',
-        'username',
-        'email',
-        'last_login',
-        'date_joined',
-        'source')
-    list_display_links = ('id', 'username')
+    list_display = ['email', 'username', 'nickname', 'is_staff', 'is_active']
+    fieldsets = (
+        (None, {'fields': ('email', 'username', 'password')}),
+        (_('Personal info'), {'fields': ('nickname',)}),
+        (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
+                                       'groups', 'user_permissions')}),
+        (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
+    )
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('email', 'username', 'nickname', 'password1', 'password2')}
+         ),
+    )
+    search_fields = ('email', 'username', 'nickname')
     ordering = ('-id',)
-    search_fields = ('username', 'nickname', 'email')
+
+
+class NotificationAdmin(admin.ModelAdmin):
+    list_display = ['title', 'recipient', 'sender', 'notification_type', 'is_read', 'create_time']
+    list_filter = ['notification_type', 'is_read', 'create_time']
+    search_fields = ['title', 'content', 'recipient__username', 'recipient__email']
+    fieldsets = (
+        (None, {'fields': ('recipient', 'sender', 'title', 'content', 'target_url')}),
+        (_('Type & Status'), {'fields': ('notification_type', 'is_read')}),
+    )
+    actions = ['mark_as_read', 'mark_as_unread']
+
+    def mark_as_read(self, request, queryset):
+        queryset.update(is_read=True)
+    mark_as_read.short_description = _('Mark selected notifications as read')
+
+    def mark_as_unread(self, request, queryset):
+        queryset.update(is_read=False)
+    mark_as_unread.short_description = _('Mark selected notifications as unread')
+
+
+admin.site.register(BlogUser, BlogUserAdmin)
+admin.site.register(Notification, NotificationAdmin)

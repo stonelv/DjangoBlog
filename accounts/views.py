@@ -1,13 +1,15 @@
 import logging
 from django.utils.translation import gettext_lazy as _
 from django.conf import settings
-from django.contrib import auth
-from django.contrib.auth import REDIRECT_FIELD_NAME
+from django.contrib import auth, messages
+from django.contrib.auth import REDIRECT_FIELD_NAME, login, authenticate
 from django.contrib.auth import get_user_model
 from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.hashers import make_password
-from django.http import HttpResponseRedirect, HttpResponseForbidden
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.http import HttpResponseRedirect, HttpResponseForbidden, JsonResponse
 from django.http.request import HttpRequest
 from django.http.response import HttpResponse
 from django.shortcuts import get_object_or_404
@@ -15,16 +17,20 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.utils.http import url_has_allowed_host_and_scheme
+from django.utils.translation import gettext_lazy as _
 from django.views import View
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.debug import sensitive_post_parameters
+from django.views.decorators.http import require_http_methods
 from django.views.generic import FormView, RedirectView
 
+from django.contrib import messages
+from django.db.models import Q
 from djangoblog.utils import send_email, get_sha256, get_current_site, generate_code, delete_sidebar_cache
 from . import utils
 from .forms import RegisterForm, LoginForm, ForgetPasswordForm, ForgetPasswordCodeForm
-from .models import BlogUser
+from .models import BlogUser, Notification
 
 logger = logging.getLogger(__name__)
 
@@ -202,3 +208,69 @@ class ForgetPasswordEmailCode(View):
         utils.set_code(to_email, code)
 
         return HttpResponse("ok")
+
+
+@login_required
+def notification_list(request):
+    """通知列表页面"""
+    user = request.user
+    notification_type = request.GET.get('type', None)
+    search_keyword = request.GET.get('search', None)
+    
+    # 获取用户的所有通知
+    notifications = Notification.objects.filter(recipient=user)
+    
+    # 筛选类型
+    if notification_type:
+        notifications = notifications.filter(notification_type=notification_type)
+    
+    # 搜索
+    if search_keyword:
+        notifications = notifications.filter(
+            Q(title__icontains=search_keyword) | 
+            Q(content__icontains=search_keyword)
+        )
+    
+    # 分页
+    paginator = Paginator(notifications, 10)
+    page = request.GET.get('page')
+    
+    try:
+        notifications_page = paginator.page(page)
+    except PageNotAnInteger:
+        notifications_page = paginator.page(1)
+    except EmptyPage:
+        notifications_page = paginator.page(paginator.num_pages)
+    
+    # 标记所有通知为已读
+    notifications.filter(is_read=False).update(is_read=True)
+    
+    return render(request, 'account/notification_list.html', {
+        'notifications': notifications_page,
+        'active_type': notification_type,
+        'search_keyword': search_keyword
+    })
+
+
+@login_required
+def mark_notification_as_read(request, notification_id):
+    """标记单条通知为已读"""
+    notification = get_object_or_404(Notification, pk=notification_id, recipient=request.user)
+    notification.is_read = True
+    notification.save()
+    
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        return JsonResponse({'status': 'success'})
+    
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/notifications/'))
+
+
+@login_required
+def mark_all_as_read(request):
+    """标记所有通知为已读"""
+    Notification.objects.filter(recipient=request.user, is_read=False).update(is_read=True)
+    
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        return JsonResponse({'status': 'success'})
+    
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/notifications/'))
