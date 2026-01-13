@@ -1,6 +1,6 @@
 bleach==6.2.0
 coverage==7.8.0
-Django==5.2.8
+Django>=4.2
 django-appconf==1.1.0
 django-compressor==4.5.1
 django-echarts==0.6.0
@@ -17,7 +17,7 @@ jieba==0.42.1
 Jinja2==3.1.6
 Markdown==3.5
 MarkupSafe==3.0.2
-mysqlclient==2.2.7
+# mysqlclient==2.2.7
 openai==0.28.1
 pillow==11.3.0
 prettytable==3.16.0
