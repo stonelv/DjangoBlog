@@ -45,6 +45,10 @@ class ArticleListView(ListView):
         page_kwarg = self.page_kwarg
         page = self.kwargs.get(
             page_kwarg) or self.request.GET.get(page_kwarg) or 1
+        try:
+            page = int(page)
+        except (ValueError, TypeError):
+            page = 1
         return page
 
     def get_queryset_cache_key(self):
@@ -66,8 +70,14 @@ class ArticleListView(ListView):
         :return:
         '''
         value = cache.get(cache_key)
-        if value:
+        if value is not None:
             logger.info('get view cache.key:{key}'.format(key=cache_key))
+            # 确保返回的是QuerySet对象
+            if hasattr(value, '__iter__') and not hasattr(value, '__getitem__'):
+                # 如果缓存的是列表而不是QuerySet，转换为QuerySet
+                from blog.models import Article
+                article_ids = [article.id for article in value]
+                return Article.objects.filter(id__in=article_ids)
             return value
         else:
             article_list = self.get_queryset_data()
@@ -122,13 +132,15 @@ class ArticleDetailView(DetailView):
         blog_setting = get_blog_setting()
         paginator = Paginator(parent_comments, blog_setting.article_comment_count)
         page = self.request.GET.get('comment_page', '1')
-        if not page.isnumeric():
+        try:
+            page = int(page)
+        except (ValueError, TypeError):
             page = 1
 
-            if page < 1:
-                page = 1
-            if page > paginator.num_pages:
-                page = paginator.num_pages
+        if page < 1:
+            page = 1
+        if page > paginator.num_pages:
+            page = paginator.num_pages
 
         p_comments = paginator.page(page)
         next_page = p_comments.next_page_number() if p_comments.has_next() else None
