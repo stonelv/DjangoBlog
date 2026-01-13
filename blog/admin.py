@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
+from accounts.models import Notification
 
 # Register your models here.
 from .models import Article, Category, Tag, Links, SideBar, BlogSettings
@@ -80,6 +81,24 @@ class ArticlelAdmin(admin.ModelAdmin):
         return form
 
     def save_model(self, request, obj, form, change):
+        # 检查文章状态是否从草稿变为发布
+        if change:
+            original_obj = Article.objects.get(pk=obj.pk)
+            if original_obj.status == 'd' and obj.status == 'p':
+                # 发送文章审核通过通知
+                title = _('Your article has been published')
+                content = _('Your article "%(title)s" has been published successfully') % {
+                    'title': obj.title
+                }
+                target_url = obj.get_absolute_url()
+                Notification.objects.create(
+                    recipient=obj.author,
+                    sender=request.user,
+                    title=title,
+                    content=content,
+                    notification_type=Notification.NotificationType.ARTICLE_APPROVAL,
+                    target_url=target_url
+                )
         super(ArticlelAdmin, self).save_model(request, obj, form, change)
 
     def get_view_on_site_url(self, obj=None):
