@@ -1,0 +1,3837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="robots" content="NONE,NOARCHIVE">
+  <title>TypeError
+          at /</title>
+  <style>
+    html * { padding:0; margin:0; }
+    body * { padding:10px 20px; }
+    body * * { padding:0; }
+    body { font-family: sans-serif; background-color:#fff; color:#000; }
+    body > :where(header, main, footer) { border-bottom:1px solid #ddd; }
+    h1 { font-weight:normal; }
+    h2 { margin-bottom:.8em; }
+    h3 { margin:1em 0 .5em 0; }
+    h4 { margin:0 0 .5em 0; font-weight: normal; }
+    code, pre { font-size: 100%; white-space: pre-wrap; word-break: break-word; }
+    summary { cursor: pointer; }
+    table { border:1px solid #ccc; border-collapse: collapse; width:100%; background:white; }
+    tbody td, tbody th { vertical-align:top; padding:2px 3px; }
+    thead th {
+      padding:1px 6px 1px 3px; background:#fefefe; text-align:left;
+      font-weight:normal; font-size: 0.6875rem; border:1px solid #ddd;
+    }
+    tbody th { width:12em; text-align:right; color:#666; padding-right:.5em; }
+    table.vars { margin:5px 10px 2px 40px; width: auto; }
+    table.vars td, table.req td { font-family:monospace; }
+    table td.code { width:100%; }
+    table td.code pre { overflow:hidden; }
+    table.source th { color:#666; }
+    table.source td { font-family:monospace; white-space:pre; border-bottom:1px solid #eee; }
+    ul.traceback { list-style-type:none; color: #222; }
+    ul.traceback li.cause { word-break: break-word; }
+    ul.traceback li.frame { padding-bottom:1em; color:#4f4f4f; }
+    ul.traceback li.user { background-color:#e0e0e0; color:#000 }
+    div.context { padding:10px 0; overflow:hidden; }
+    div.context ol { padding-left:30px; margin:0 10px; list-style-position: inside; }
+    div.context ol li { font-family:monospace; white-space:pre; color:#777; cursor:pointer; padding-left: 2px; }
+    div.context ol li pre { display:inline; }
+    div.context ol.context-line li { color:#464646; background-color:#dfdfdf; padding: 3px 2px; }
+    div.context ol.context-line li span { position:absolute; right:32px; }
+    .user div.context ol.context-line li { background-color:#bbb; color:#000; }
+    .user div.context ol li { color:#666; }
+    div.commands, summary.commands { margin-left: 40px; }
+    div.commands a, summary.commands { color:#555; text-decoration:none; }
+    .user div.commands a { color: black; }
+    #summary { background: #ffc; }
+    #summary h2 { font-weight: normal; color: #666; }
+    #info { padding: 0; }
+    #info > * { padding:10px 20px; }
+    #explanation { background:#eee; }
+    #template, #template-not-exist { background:#f6f6f6; }
+    #template-not-exist ul { margin: 0 0 10px 20px; }
+    #template-not-exist .postmortem-section { margin-bottom: 3px; }
+    #unicode-hint { background:#eee; }
+    #traceback { background:#eee; }
+    #requestinfo { background:#f6f6f6; padding-left:120px; }
+    #summary table { border:none; background:transparent; }
+    #requestinfo h2, #requestinfo h3 { position:relative; margin-left:-100px; }
+    #requestinfo h3 { margin-bottom:-1em; }
+    .error { background: #ffc; }
+    .specific { color:#cc3300; font-weight:bold; }
+    h2 span.commands { font-size: 0.7rem; font-weight:normal; }
+    span.commands a:link {color:#5E5694;}
+    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5rem; margin: 10px 0 10px 0; }
+    .append-bottom { margin-bottom: 10px; }
+    .fname { user-select: all; }
+  </style>
+  
+  <script>
+    function hideAll(elems) {
+      for (var e = 0; e < elems.length; e++) {
+        elems[e].style.display = 'none';
+      }
+    }
+    window.onload = function() {
+      hideAll(document.querySelectorAll('ol.pre-context'));
+      hideAll(document.querySelectorAll('ol.post-context'));
+      hideAll(document.querySelectorAll('div.pastebin'));
+    }
+    function toggle() {
+      for (var i = 0; i < arguments.length; i++) {
+        var e = document.getElementById(arguments[i]);
+        if (e) {
+          e.style.display = e.style.display == 'none' ? 'block': 'none';
+        }
+      }
+      return false;
+    }
+    function switchPastebinFriendly(link) {
+      s1 = "Switch to copy-and-paste view";
+      s2 = "Switch back to interactive view";
+      link.textContent = link.textContent.trim() == s1 ? s2: s1;
+      toggle('browserTraceback', 'pastebinTraceback');
+      return false;
+    }
+  </script>
+  
+</head>
+<body>
+<header id="summary">
+  <h1>TypeError
+       at /</h1>
+  <pre class="exception_value">&#x27;&lt;&#x27; not supported between instances of &#x27;str&#x27; and &#x27;int&#x27;</pre>
+  <table class="meta">
+
+    <tr>
+      <th scope="row">Request Method:</th>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <th scope="row">Request URL:</th>
+      <td>http://127.0.0.1:8000/</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Django Version:</th>
+      <td>6.0.1</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Exception Type:</th>
+      <td>TypeError</td>
+    </tr>
+
+
+    <tr>
+      <th scope="row">Exception Value:</th>
+      <td><pre>&#x27;&lt;&#x27; not supported between instances of &#x27;str&#x27; and &#x27;int&#x27;</pre></td>
+    </tr>
+
+
+    <tr>
+      <th scope="row">Exception Location:</th>
+      <td><span class="fname">/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/db/models/query.py</span>, line 418, in __getitem__</td>
+    </tr>
+
+
+    <tr>
+      <th scope="row">Raised during:</th>
+      <td>blog.views.IndexView</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Python Executable:</th>
+      <td>/Users/lvzhe/github/DjangoBlog/.venv/bin/python</td>
+    </tr>
+    <tr>
+      <th scope="row">Python Version:</th>
+      <td>3.12.12</td>
+    </tr>
+    <tr>
+      <th scope="row">Python Path:</th>
+      <td><pre><code>[&#x27;/Users/lvzhe/github/DjangoBlog&#x27;,
+ &#x27;/opt/homebrew/Cellar/python@3.12/3.12.12/Frameworks/Python.framework/Versions/3.12/lib/python312.zip&#x27;,
+ &#x27;/opt/homebrew/Cellar/python@3.12/3.12.12/Frameworks/Python.framework/Versions/3.12/lib/python3.12&#x27;,
+ &#x27;/opt/homebrew/Cellar/python@3.12/3.12.12/Frameworks/Python.framework/Versions/3.12/lib/python3.12/lib-dynload&#x27;,
+ &#x27;/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages&#x27;,
+ &#x27;/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/setuptools/_vendor&#x27;]</code></pre></td>
+    </tr>
+    <tr>
+      <th scope="row">Server time:</th>
+      <td>Tue, 13 Jan 2026 19:20:23 +0800</td>
+    </tr>
+  </table>
+</header>
+
+<main id="info">
+
+
+
+<div id="template">
+   <h2>Error during template rendering</h2>
+   <p>In template <code>/Users/lvzhe/github/DjangoBlog/templates/blog/article_index.html</code>, error at line <strong>41</strong></p>
+   <h3>&#x27;&lt;&#x27; not supported between instances of &#x27;str&#x27; and &#x27;int&#x27;</h3>
+   <table class="source cut-top
+      ">
+   
+   
+      <tr><th scope="row">31</th>
+      <td>            {% endfor %}
+</td></tr>
+   
+   
+   
+      <tr><th scope="row">32</th>
+      <td>            {% if is_paginated %}
+</td></tr>
+   
+   
+   
+      <tr><th scope="row">33</th>
+      <td>                {% load_pagination_info page_obj page_type tag_name %}
+</td></tr>
+   
+   
+   
+      <tr><th scope="row">34</th>
+      <td>
+</td></tr>
+   
+   
+   
+      <tr><th scope="row">35</th>
+      <td>            {% endif %}
+</td></tr>
+   
+   
+   
+      <tr><th scope="row">36</th>
+      <td>        &lt;/div&gt;&lt;!-- #content --&gt;
+</td></tr>
+   
+   
+   
+      <tr><th scope="row">37</th>
+      <td>    &lt;/div&gt;&lt;!-- #primary --&gt;
+</td></tr>
+   
+   
+   
+      <tr><th scope="row">38</th>
+      <td>
+</td></tr>
+   
+   
+   
+      <tr><th scope="row">39</th>
+      <td>{% endblock %}
+</td></tr>
+   
+   
+   
+      <tr><th scope="row">40</th>
+      <td>{% block sidebar %}
+</td></tr>
+   
+   
+   
+   <tr class="error"><th scope="row">41</th>
+     <td>    <span class="specific">{% load_sidebar user linktype %}</span>
+</td>
+   </tr>
+   
+   
+   
+      <tr><th scope="row">42</th>
+      <td>{% endblock %}</td></tr>
+   
+   
+   </table>
+</div>
+
+
+<div id="traceback">
+  <h2>Traceback <span class="commands"><a href="#" role="button" onclick="return switchPastebinFriendly(this);">
+    Switch to copy-and-paste view</a></span>
+  </h2>
+  <div id="browserTraceback">
+    <ul class="traceback">
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py</code>, line 55, in inner
+          
+
+          
+            <div class="context" id="c4543014400">
+              
+                <ol start="48" class="pre-context" id="pre4543014400">
+                
+                  <li onclick="toggle('pre4543014400', 'post4543014400')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre4543014400', 'post4543014400')"><pre>        return inner</pre></li>
+                
+                  <li onclick="toggle('pre4543014400', 'post4543014400')"><pre>    else:</pre></li>
+                
+                  <li onclick="toggle('pre4543014400', 'post4543014400')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre4543014400', 'post4543014400')"><pre>        @wraps(get_response)</pre></li>
+                
+                  <li onclick="toggle('pre4543014400', 'post4543014400')"><pre>        def inner(request):</pre></li>
+                
+                  <li onclick="toggle('pre4543014400', 'post4543014400')"><pre>            try:</pre></li>
+                
+                </ol>
+              
+              <ol start="55" class="context-line">
+                <li onclick="toggle('pre4543014400', 'post4543014400')"><pre>                response = get_response(request)
+                               ^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='56' class="post-context" id="post4543014400">
+                  
+                  <li onclick="toggle('pre4543014400', 'post4543014400')"><pre>            except Exception as exc:</pre></li>
+                  
+                  <li onclick="toggle('pre4543014400', 'post4543014400')"><pre>                response = response_for_exception(request, exc)</pre></li>
+                  
+                  <li onclick="toggle('pre4543014400', 'post4543014400')"><pre>            return response</pre></li>
+                  
+                  <li onclick="toggle('pre4543014400', 'post4543014400')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre4543014400', 'post4543014400')"><pre>        return inner</pre></li>
+                  
+                  <li onclick="toggle('pre4543014400', 'post4543014400')"><pre></pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            
+              <details>
+                <summary class="commands">Local vars</summary>
+            
+            <table class="vars" id="v4543014400">
+              <thead>
+                <tr>
+                  <th scope="col">Variable</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>exc</td>
+                    <td class="code"><pre>TypeError(&quot;&#x27;&lt;&#x27; not supported between instances of &#x27;str&#x27; and &#x27;int&#x27;&quot;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>get_response</td>
+                    <td class="code"><pre>&lt;bound method BaseHandler._get_response of &lt;django.core.handlers.wsgi.WSGIHandler object at 0x10adf9eb0&gt;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>request</td>
+                    <td class="code"><pre>&lt;WSGIRequest: GET &#x27;/&#x27;&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+            </details>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/core/handlers/base.py</code>, line 221, in _get_response
+          
+
+          
+            <div class="context" id="c4543011584">
+              
+                <ol start="214" class="pre-context" id="pre4543011584">
+                
+                  <li onclick="toggle('pre4543011584', 'post4543011584')"><pre>                self.check_response(</pre></li>
+                
+                  <li onclick="toggle('pre4543011584', 'post4543011584')"><pre>                    response,</pre></li>
+                
+                  <li onclick="toggle('pre4543011584', 'post4543011584')"><pre>                    middleware_method,</pre></li>
+                
+                  <li onclick="toggle('pre4543011584', 'post4543011584')"><pre>                    name=&quot;%s.process_template_response&quot;</pre></li>
+                
+                  <li onclick="toggle('pre4543011584', 'post4543011584')"><pre>                    % (middleware_method.__self__.__class__.__name__,),</pre></li>
+                
+                  <li onclick="toggle('pre4543011584', 'post4543011584')"><pre>                )</pre></li>
+                
+                  <li onclick="toggle('pre4543011584', 'post4543011584')"><pre>            try:</pre></li>
+                
+                </ol>
+              
+              <ol start="221" class="context-line">
+                <li onclick="toggle('pre4543011584', 'post4543011584')"><pre>                response = response.render()
+                                ^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='222' class="post-context" id="post4543011584">
+                  
+                  <li onclick="toggle('pre4543011584', 'post4543011584')"><pre>            except Exception as e:</pre></li>
+                  
+                  <li onclick="toggle('pre4543011584', 'post4543011584')"><pre>                response = self.process_exception_by_middleware(e, request)</pre></li>
+                  
+                  <li onclick="toggle('pre4543011584', 'post4543011584')"><pre>                if response is None:</pre></li>
+                  
+                  <li onclick="toggle('pre4543011584', 'post4543011584')"><pre>                    raise</pre></li>
+                  
+                  <li onclick="toggle('pre4543011584', 'post4543011584')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre4543011584', 'post4543011584')"><pre>        return response</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            
+              <details>
+                <summary class="commands">Local vars</summary>
+            
+            <table class="vars" id="v4543011584">
+              <thead>
+                <tr>
+                  <th scope="col">Variable</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>callback</td>
+                    <td class="code"><pre>&lt;function View.as_view.&lt;locals&gt;.view at 0x10e7b76a0&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>callback_args</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>callback_kwargs</td>
+                    <td class="code"><pre>{}</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>middleware_method</td>
+                    <td class="code"><pre>&lt;bound method CsrfViewMiddleware.process_view of &lt;CsrfViewMiddleware get_response=convert_exception_to_response.&lt;locals&gt;.inner&gt;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>request</td>
+                    <td class="code"><pre>&lt;WSGIRequest: GET &#x27;/&#x27;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>response</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.core.handlers.wsgi.WSGIHandler object at 0x10adf9eb0&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>wrapped_callback</td>
+                    <td class="code"><pre>&lt;function View.as_view.&lt;locals&gt;.view at 0x10e7b76a0&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+            </details>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/response.py</code>, line 114, in render
+          
+
+          
+            <div class="context" id="c4543007232">
+              
+                <ol start="107" class="pre-context" id="pre4543007232">
+                
+                  <li onclick="toggle('pre4543007232', 'post4543007232')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre4543007232', 'post4543007232')"><pre>        If the content has already been rendered, this is a no-op.</pre></li>
+                
+                  <li onclick="toggle('pre4543007232', 'post4543007232')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre4543007232', 'post4543007232')"><pre>        Return the baked response instance.</pre></li>
+                
+                  <li onclick="toggle('pre4543007232', 'post4543007232')"><pre>        &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre4543007232', 'post4543007232')"><pre>        retval = self</pre></li>
+                
+                  <li onclick="toggle('pre4543007232', 'post4543007232')"><pre>        if not self._is_rendered:</pre></li>
+                
+                </ol>
+              
+              <ol start="114" class="context-line">
+                <li onclick="toggle('pre4543007232', 'post4543007232')"><pre>            self.content = self.rendered_content
+                                ^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='115' class="post-context" id="post4543007232">
+                  
+                  <li onclick="toggle('pre4543007232', 'post4543007232')"><pre>            for post_callback in self._post_render_callbacks:</pre></li>
+                  
+                  <li onclick="toggle('pre4543007232', 'post4543007232')"><pre>                newretval = post_callback(retval)</pre></li>
+                  
+                  <li onclick="toggle('pre4543007232', 'post4543007232')"><pre>                if newretval is not None:</pre></li>
+                  
+                  <li onclick="toggle('pre4543007232', 'post4543007232')"><pre>                    retval = newretval</pre></li>
+                  
+                  <li onclick="toggle('pre4543007232', 'post4543007232')"><pre>        return retval</pre></li>
+                  
+                  <li onclick="toggle('pre4543007232', 'post4543007232')"><pre></pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            
+              <details>
+                <summary class="commands">Local vars</summary>
+            
+            <table class="vars" id="v4543007232">
+              <thead>
+                <tr>
+                  <th scope="col">Variable</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>retval</td>
+                    <td class="code"><pre>&lt;TemplateResponse status_code=200, &quot;text/html; charset=utf-8&quot;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;TemplateResponse status_code=200, &quot;text/html; charset=utf-8&quot;&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+            </details>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/response.py</code>, line 92, in rendered_content
+          
+
+          
+            <div class="context" id="c4544933952">
+              
+                <ol start="85" class="pre-context" id="pre4544933952">
+                
+                  <li onclick="toggle('pre4544933952', 'post4544933952')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre4544933952', 'post4544933952')"><pre>        This *does not* set the final content of the response. To set the</pre></li>
+                
+                  <li onclick="toggle('pre4544933952', 'post4544933952')"><pre>        response content, you must either call render(), or set the</pre></li>
+                
+                  <li onclick="toggle('pre4544933952', 'post4544933952')"><pre>        content explicitly using the value of this property.</pre></li>
+                
+                  <li onclick="toggle('pre4544933952', 'post4544933952')"><pre>        &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre4544933952', 'post4544933952')"><pre>        template = self.resolve_template(self.template_name)</pre></li>
+                
+                  <li onclick="toggle('pre4544933952', 'post4544933952')"><pre>        context = self.resolve_context(self.context_data)</pre></li>
+                
+                </ol>
+              
+              <ol start="92" class="context-line">
+                <li onclick="toggle('pre4544933952', 'post4544933952')"><pre>        return template.render(context, self._request)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='93' class="post-context" id="post4544933952">
+                  
+                  <li onclick="toggle('pre4544933952', 'post4544933952')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre4544933952', 'post4544933952')"><pre>    def add_post_render_callback(self, callback):</pre></li>
+                  
+                  <li onclick="toggle('pre4544933952', 'post4544933952')"><pre>        &quot;&quot;&quot;Add a new post-rendering callback.</pre></li>
+                  
+                  <li onclick="toggle('pre4544933952', 'post4544933952')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre4544933952', 'post4544933952')"><pre>        If the response has already been rendered,</pre></li>
+                  
+                  <li onclick="toggle('pre4544933952', 'post4544933952')"><pre>        invoke the callback immediately.</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            
+              <details>
+                <summary class="commands">Local vars</summary>
+            
+            <table class="vars" id="v4544933952">
+              <thead>
+                <tr>
+                  <th scope="col">Variable</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>context</td>
+                    <td class="code"><pre>{&#x27;article_list&#x27;: [&lt;Article: Test Article&gt;],
+ &#x27;is_paginated&#x27;: False,
+ &#x27;linktype&#x27;: LinkShowType.I,
+ &#x27;object_list&#x27;: [&lt;Article: Test Article&gt;],
+ &#x27;page_obj&#x27;: &lt;Page 1 of 1&gt;,
+ &#x27;paginator&#x27;: &lt;django.core.paginator.Paginator object at 0x10ecb7ec0&gt;,
+ &#x27;view&#x27;: &lt;blog.views.IndexView object at 0x10ecb62a0&gt;}</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;TemplateResponse status_code=200, &quot;text/html; charset=utf-8&quot;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>template</td>
+                    <td class="code"><pre>&lt;django.template.backends.django.Template object at 0x10ecb4c80&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+            </details>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/backends/django.py</code>, line 107, in render
+          
+
+          
+            <div class="context" id="c4546129664">
+              
+                <ol start="100" class="pre-context" id="pre4546129664">
+                
+                  <li onclick="toggle('pre4546129664', 'post4546129664')"><pre>        return self.template.origin</pre></li>
+                
+                  <li onclick="toggle('pre4546129664', 'post4546129664')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre4546129664', 'post4546129664')"><pre>    def render(self, context=None, request=None):</pre></li>
+                
+                  <li onclick="toggle('pre4546129664', 'post4546129664')"><pre>        context = make_context(</pre></li>
+                
+                  <li onclick="toggle('pre4546129664', 'post4546129664')"><pre>            context, request, autoescape=self.backend.engine.autoescape</pre></li>
+                
+                  <li onclick="toggle('pre4546129664', 'post4546129664')"><pre>        )</pre></li>
+                
+                  <li onclick="toggle('pre4546129664', 'post4546129664')"><pre>        try:</pre></li>
+                
+                </ol>
+              
+              <ol start="107" class="context-line">
+                <li onclick="toggle('pre4546129664', 'post4546129664')"><pre>            return self.template.render(context)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='108' class="post-context" id="post4546129664">
+                  
+                  <li onclick="toggle('pre4546129664', 'post4546129664')"><pre>        except TemplateDoesNotExist as exc:</pre></li>
+                  
+                  <li onclick="toggle('pre4546129664', 'post4546129664')"><pre>            reraise(exc, self.backend)</pre></li>
+                  
+                  <li onclick="toggle('pre4546129664', 'post4546129664')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre4546129664', 'post4546129664')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre4546129664', 'post4546129664')"><pre>def copy_exception(exc, backend=None):</pre></li>
+                  
+                  <li onclick="toggle('pre4546129664', 'post4546129664')"><pre>    &quot;&quot;&quot;</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            
+              <details>
+                <summary class="commands">Local vars</summary>
+            
+            <table class="vars" id="v4546129664">
+              <thead>
+                <tr>
+                  <th scope="col">Variable</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>context</td>
+                    <td class="code"><pre>[{&#x27;True&#x27;: True, &#x27;False&#x27;: False, &#x27;None&#x27;: None}, {}, {}, {&#x27;paginator&#x27;: &lt;django.core.paginator.Paginator object at 0x10ecb7ec0&gt;, &#x27;page_obj&#x27;: &lt;Page 1 of 1&gt;, &#x27;is_paginated&#x27;: False, &#x27;object_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;article_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;linktype&#x27;: LinkShowType.I, &#x27;view&#x27;: &lt;blog.views.IndexView object at 0x10ecb62a0&gt;, &#x27;compressed&#x27;: {&#x27;name&#x27;: None}}]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>request</td>
+                    <td class="code"><pre>&lt;WSGIRequest: GET &#x27;/&#x27;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.template.backends.django.Template object at 0x10ecb4c80&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+            </details>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/base.py</code>, line 174, in render
+          
+
+          
+            <div class="context" id="c4543712256">
+              
+                <ol start="167" class="pre-context" id="pre4543712256">
+                
+                  <li onclick="toggle('pre4543712256', 'post4543712256')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre4543712256', 'post4543712256')"><pre>    def render(self, context):</pre></li>
+                
+                  <li onclick="toggle('pre4543712256', 'post4543712256')"><pre>        &quot;Display stage -- can be called many times&quot;</pre></li>
+                
+                  <li onclick="toggle('pre4543712256', 'post4543712256')"><pre>        with context.render_context.push_state(self):</pre></li>
+                
+                  <li onclick="toggle('pre4543712256', 'post4543712256')"><pre>            if context.template is None:</pre></li>
+                
+                  <li onclick="toggle('pre4543712256', 'post4543712256')"><pre>                with context.bind_template(self):</pre></li>
+                
+                  <li onclick="toggle('pre4543712256', 'post4543712256')"><pre>                    context.template_name = self.name</pre></li>
+                
+                </ol>
+              
+              <ol start="174" class="context-line">
+                <li onclick="toggle('pre4543712256', 'post4543712256')"><pre>                    return self._render(context)
+                                ^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='175' class="post-context" id="post4543712256">
+                  
+                  <li onclick="toggle('pre4543712256', 'post4543712256')"><pre>            else:</pre></li>
+                  
+                  <li onclick="toggle('pre4543712256', 'post4543712256')"><pre>                return self._render(context)</pre></li>
+                  
+                  <li onclick="toggle('pre4543712256', 'post4543712256')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre4543712256', 'post4543712256')"><pre>    def compile_nodelist(self):</pre></li>
+                  
+                  <li onclick="toggle('pre4543712256', 'post4543712256')"><pre>        &quot;&quot;&quot;</pre></li>
+                  
+                  <li onclick="toggle('pre4543712256', 'post4543712256')"><pre>        Parse and compile the template source into a nodelist. If debug</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            
+              <details>
+                <summary class="commands">Local vars</summary>
+            
+            <table class="vars" id="v4543712256">
+              <thead>
+                <tr>
+                  <th scope="col">Variable</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>context</td>
+                    <td class="code"><pre>[{&#x27;True&#x27;: True, &#x27;False&#x27;: False, &#x27;None&#x27;: None}, {}, {}, {&#x27;paginator&#x27;: &lt;django.core.paginator.Paginator object at 0x10ecb7ec0&gt;, &#x27;page_obj&#x27;: &lt;Page 1 of 1&gt;, &#x27;is_paginated&#x27;: False, &#x27;object_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;article_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;linktype&#x27;: LinkShowType.I, &#x27;view&#x27;: &lt;blog.views.IndexView object at 0x10ecb62a0&gt;, &#x27;compressed&#x27;: {&#x27;name&#x27;: None}}]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;Template template_string=&quot;{% extends &#x27;share_la...&quot;&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+            </details>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/base.py</code>, line 166, in _render
+          
+
+          
+            <div class="context" id="c4543716928">
+              
+                <ol start="159" class="pre-context" id="pre4543716928">
+                
+                  <li onclick="toggle('pre4543716928', 'post4543716928')"><pre>    def __repr__(self):</pre></li>
+                
+                  <li onclick="toggle('pre4543716928', 'post4543716928')"><pre>        return &#x27;&lt;%s template_string=&quot;%s...&quot;&gt;&#x27; % (</pre></li>
+                
+                  <li onclick="toggle('pre4543716928', 'post4543716928')"><pre>            self.__class__.__qualname__,</pre></li>
+                
+                  <li onclick="toggle('pre4543716928', 'post4543716928')"><pre>            self.source[:20].replace(&quot;\n&quot;, &quot;&quot;),</pre></li>
+                
+                  <li onclick="toggle('pre4543716928', 'post4543716928')"><pre>        )</pre></li>
+                
+                  <li onclick="toggle('pre4543716928', 'post4543716928')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre4543716928', 'post4543716928')"><pre>    def _render(self, context):</pre></li>
+                
+                </ol>
+              
+              <ol start="166" class="context-line">
+                <li onclick="toggle('pre4543716928', 'post4543716928')"><pre>        return self.nodelist.render(context)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='167' class="post-context" id="post4543716928">
+                  
+                  <li onclick="toggle('pre4543716928', 'post4543716928')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre4543716928', 'post4543716928')"><pre>    def render(self, context):</pre></li>
+                  
+                  <li onclick="toggle('pre4543716928', 'post4543716928')"><pre>        &quot;Display stage -- can be called many times&quot;</pre></li>
+                  
+                  <li onclick="toggle('pre4543716928', 'post4543716928')"><pre>        with context.render_context.push_state(self):</pre></li>
+                  
+                  <li onclick="toggle('pre4543716928', 'post4543716928')"><pre>            if context.template is None:</pre></li>
+                  
+                  <li onclick="toggle('pre4543716928', 'post4543716928')"><pre>                with context.bind_template(self):</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            
+              <details>
+                <summary class="commands">Local vars</summary>
+            
+            <table class="vars" id="v4543716928">
+              <thead>
+                <tr>
+                  <th scope="col">Variable</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>context</td>
+                    <td class="code"><pre>[{&#x27;True&#x27;: True, &#x27;False&#x27;: False, &#x27;None&#x27;: None}, {}, {}, {&#x27;paginator&#x27;: &lt;django.core.paginator.Paginator object at 0x10ecb7ec0&gt;, &#x27;page_obj&#x27;: &lt;Page 1 of 1&gt;, &#x27;is_paginated&#x27;: False, &#x27;object_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;article_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;linktype&#x27;: LinkShowType.I, &#x27;view&#x27;: &lt;blog.views.IndexView object at 0x10ecb62a0&gt;, &#x27;compressed&#x27;: {&#x27;name&#x27;: None}}]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;Template template_string=&quot;{% extends &#x27;share_la...&quot;&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+            </details>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/base.py</code>, line 1091, in render
+          
+
+          
+            <div class="context" id="c4543720064">
+              
+                <ol start="1084" class="pre-context" id="pre4543720064">
+                
+                  <li onclick="toggle('pre4543720064', 'post4543720064')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre4543720064', 'post4543720064')"><pre>class NodeList(list):</pre></li>
+                
+                  <li onclick="toggle('pre4543720064', 'post4543720064')"><pre>    # Set to True the first time a non-TextNode is inserted by</pre></li>
+                
+                  <li onclick="toggle('pre4543720064', 'post4543720064')"><pre>    # extend_nodelist().</pre></li>
+                
+                  <li onclick="toggle('pre4543720064', 'post4543720064')"><pre>    contains_nontext = False</pre></li>
+                
+                  <li onclick="toggle('pre4543720064', 'post4543720064')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre4543720064', 'post4543720064')"><pre>    def render(self, context):</pre></li>
+                
+                </ol>
+              
+              <ol start="1091" class="context-line">
+                <li onclick="toggle('pre4543720064', 'post4543720064')"><pre>        return SafeString(&quot;&quot;.join([node.render_annotated(context) for node in self]))
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='1092' class="post-context" id="post4543720064">
+                  
+                  <li onclick="toggle('pre4543720064', 'post4543720064')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre4543720064', 'post4543720064')"><pre>    def get_nodes_by_type(self, nodetype):</pre></li>
+                  
+                  <li onclick="toggle('pre4543720064', 'post4543720064')"><pre>        &quot;Return a list of all nodes of the given type&quot;</pre></li>
+                  
+                  <li onclick="toggle('pre4543720064', 'post4543720064')"><pre>        nodes = []</pre></li>
+                  
+                  <li onclick="toggle('pre4543720064', 'post4543720064')"><pre>        for node in self:</pre></li>
+                  
+                  <li onclick="toggle('pre4543720064', 'post4543720064')"><pre>            nodes.extend(node.get_nodes_by_type(nodetype))</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            
+              <details>
+                <summary class="commands">Local vars</summary>
+            
+            <table class="vars" id="v4543720064">
+              <thead>
+                <tr>
+                  <th scope="col">Variable</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>context</td>
+                    <td class="code"><pre>[{&#x27;True&#x27;: True, &#x27;False&#x27;: False, &#x27;None&#x27;: None}, {}, {}, {&#x27;paginator&#x27;: &lt;django.core.paginator.Paginator object at 0x10ecb7ec0&gt;, &#x27;page_obj&#x27;: &lt;Page 1 of 1&gt;, &#x27;is_paginated&#x27;: False, &#x27;object_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;article_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;linktype&#x27;: LinkShowType.I, &#x27;view&#x27;: &lt;blog.views.IndexView object at 0x10ecb62a0&gt;, &#x27;compressed&#x27;: {&#x27;name&#x27;: None}}]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>[&lt;ExtendsNode: extends &#x27;share_layout/base.html&#x27;&gt;]</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+            </details>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/base.py</code>, line 1052, in render_annotated
+          
+
+          
+            <div class="context" id="c4543718080">
+              
+                <ol start="1045" class="pre-context" id="pre4543718080">
+                
+                  <li onclick="toggle('pre4543718080', 'post4543718080')"><pre>        &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre4543718080', 'post4543718080')"><pre>        Render the node. If debug is True and an exception occurs during</pre></li>
+                
+                  <li onclick="toggle('pre4543718080', 'post4543718080')"><pre>        rendering, the exception is annotated with contextual line information</pre></li>
+                
+                  <li onclick="toggle('pre4543718080', 'post4543718080')"><pre>        where it occurred in the template. For internal usage this method is</pre></li>
+                
+                  <li onclick="toggle('pre4543718080', 'post4543718080')"><pre>        preferred over using the render method directly.</pre></li>
+                
+                  <li onclick="toggle('pre4543718080', 'post4543718080')"><pre>        &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre4543718080', 'post4543718080')"><pre>        try:</pre></li>
+                
+                </ol>
+              
+              <ol start="1052" class="context-line">
+                <li onclick="toggle('pre4543718080', 'post4543718080')"><pre>            return self.render(context)
+                         ^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='1053' class="post-context" id="post4543718080">
+                  
+                  <li onclick="toggle('pre4543718080', 'post4543718080')"><pre>        except Exception as e:</pre></li>
+                  
+                  <li onclick="toggle('pre4543718080', 'post4543718080')"><pre>            if context.template.engine.debug:</pre></li>
+                  
+                  <li onclick="toggle('pre4543718080', 'post4543718080')"><pre>                # Store the actual node that caused the exception.</pre></li>
+                  
+                  <li onclick="toggle('pre4543718080', 'post4543718080')"><pre>                if not hasattr(e, &quot;_culprit_node&quot;):</pre></li>
+                  
+                  <li onclick="toggle('pre4543718080', 'post4543718080')"><pre>                    e._culprit_node = self</pre></li>
+                  
+                  <li onclick="toggle('pre4543718080', 'post4543718080')"><pre>                if (</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            
+              <details>
+                <summary class="commands">Local vars</summary>
+            
+            <table class="vars" id="v4543718080">
+              <thead>
+                <tr>
+                  <th scope="col">Variable</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>context</td>
+                    <td class="code"><pre>[{&#x27;True&#x27;: True, &#x27;False&#x27;: False, &#x27;None&#x27;: None}, {}, {}, {&#x27;paginator&#x27;: &lt;django.core.paginator.Paginator object at 0x10ecb7ec0&gt;, &#x27;page_obj&#x27;: &lt;Page 1 of 1&gt;, &#x27;is_paginated&#x27;: False, &#x27;object_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;article_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;linktype&#x27;: LinkShowType.I, &#x27;view&#x27;: &lt;blog.views.IndexView object at 0x10ecb62a0&gt;, &#x27;compressed&#x27;: {&#x27;name&#x27;: None}}]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;ExtendsNode: extends &#x27;share_layout/base.html&#x27;&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+            </details>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/loader_tags.py</code>, line 160, in render
+          
+
+          
+            <div class="context" id="c4543724224">
+              
+                <ol start="153" class="pre-context" id="pre4543724224">
+                
+                  <li onclick="toggle('pre4543724224', 'post4543724224')"><pre>                    }</pre></li>
+                
+                  <li onclick="toggle('pre4543724224', 'post4543724224')"><pre>                    block_context.add_blocks(blocks)</pre></li>
+                
+                  <li onclick="toggle('pre4543724224', 'post4543724224')"><pre>                break</pre></li>
+                
+                  <li onclick="toggle('pre4543724224', 'post4543724224')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre4543724224', 'post4543724224')"><pre>        # Call Template._render explicitly so the parser context stays</pre></li>
+                
+                  <li onclick="toggle('pre4543724224', 'post4543724224')"><pre>        # the same.</pre></li>
+                
+                  <li onclick="toggle('pre4543724224', 'post4543724224')"><pre>        with context.render_context.push_state(compiled_parent, isolated_context=False):</pre></li>
+                
+                </ol>
+              
+              <ol start="160" class="context-line">
+                <li onclick="toggle('pre4543724224', 'post4543724224')"><pre>            return compiled_parent._render(context)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='161' class="post-context" id="post4543724224">
+                  
+                  <li onclick="toggle('pre4543724224', 'post4543724224')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre4543724224', 'post4543724224')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre4543724224', 'post4543724224')"><pre>class IncludeNode(Node):</pre></li>
+                  
+                  <li onclick="toggle('pre4543724224', 'post4543724224')"><pre>    context_key = &quot;__include_context&quot;</pre></li>
+                  
+                  <li onclick="toggle('pre4543724224', 'post4543724224')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre4543724224', 'post4543724224')"><pre>    def __init__(</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            
+              <details>
+                <summary class="commands">Local vars</summary>
+            
+            <table class="vars" id="v4543724224">
+              <thead>
+                <tr>
+                  <th scope="col">Variable</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>block_context</td>
+                    <td class="code"><pre>&lt;BlockContext: blocks=defaultdict(&lt;class &#x27;list&#x27;&gt;, {&#x27;header&#x27;: [&lt;Block Node: header. Contents: [&lt;TextNode: &#x27;\n        &lt;!-- SEO插件会自动生成t&#x27;&gt;]&gt;, &lt;Block Node: header. Contents: [&lt;TextNode: &#x27;\n    &#x27;&gt;, &lt;IfNode&gt;, &lt;TextNode: &#x27;\n    &lt;meta name=&quot;descript&#x27;&gt;, &lt;Variable Node: SITE_SEO_DESCRIPTION&gt;, &lt;TextNode: &#x27;&quot;/&gt;\n    &lt;meta name=&quot;keywo&#x27;&gt;, &lt;Variable Node: SITE_KEYWORDS&gt;, &lt;TextNode: &#x27;&quot;/&gt;\n    &lt;meta property=&quot;o&#x27;&gt;, &lt;Variable Node: SITE_NAME&gt;, &lt;TextNode: &#x27;&quot;/&gt;\n    &lt;meta property=&quot;o&#x27;&gt;, &lt;Variable Node: SITE_DESCRIPTION&gt;, &lt;TextNode: &#x27;&quot;/&gt;\n    &lt;meta property=&quot;o&#x27;&gt;, &lt;Variable Node: SITE_BASE_URL&gt;, &lt;TextNode: &#x27;&quot;/&gt;\n    &lt;meta property=&quot;o&#x27;&gt;, &lt;Variable Node: SITE_NAME&gt;, &lt;TextNode: &#x27;&quot;/&gt;\n&#x27;&gt;]&gt;], &#x27;content&#x27;: [&lt;Block Node: content. Contents: [&lt;TextNode: &#x27;\n        &#x27;&gt;]&gt;, &lt;Block Node: content. Contents: [&lt;TextNode: &#x27;\n    &lt;div id=&quot;primary&quot; cl&#x27;&gt;, &lt;IfNode&gt;, &lt;TextNode: &#x27;\n\n            &#x27;&gt;, &lt;ForNode: for article in article_list, tail_len: 3&gt;, &lt;TextNode: &#x27;\n            &#x27;&gt;, &lt;IfNode&gt;, &lt;TextNode: &#x27;\n        &lt;/div&gt;&lt;!-- #cont&#x27;&gt;]&gt;], &#x27;sidebar&#x27;: [&lt;Block Node: sidebar. Contents: [&lt;TextNode: &#x27;\n        &#x27;&gt;]&gt;], &#x27;compress_css&#x27;: [&lt;Block Node: compress_css. Contents: [&lt;TextNode: &#x27;\n        &#x27;&gt;]&gt;], &#x27;compress_js&#x27;: [&lt;Block Node: compress_js. Contents: [&lt;TextNode: &#x27;\n    &#x27;&gt;]&gt;], &#x27;footer&#x27;: [&lt;Block Node: footer. Contents: [&lt;TextNode: &#x27;\n&#x27;&gt;]&gt;]})&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>blocks</td>
+                    <td class="code"><pre>{&#x27;compress_css&#x27;: &lt;Block Node: compress_css. Contents: [&lt;TextNode: &#x27;\n        &#x27;&gt;]&gt;,
+ &#x27;compress_js&#x27;: &lt;Block Node: compress_js. Contents: [&lt;TextNode: &#x27;\n    &#x27;&gt;]&gt;,
+ &#x27;content&#x27;: &lt;Block Node: content. Contents: [&lt;TextNode: &#x27;\n        &#x27;&gt;]&gt;,
+ &#x27;footer&#x27;: &lt;Block Node: footer. Contents: [&lt;TextNode: &#x27;\n&#x27;&gt;]&gt;,
+ &#x27;header&#x27;: &lt;Block Node: header. Contents: [&lt;TextNode: &#x27;\n        &lt;!-- SEO插件会自动生成t&#x27;&gt;]&gt;,
+ &#x27;sidebar&#x27;: &lt;Block Node: sidebar. Contents: [&lt;TextNode: &#x27;\n        &#x27;&gt;]&gt;}</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>compiled_parent</td>
+                    <td class="code"><pre>&lt;Template template_string=&quot;{% load static %}{%...&quot;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>context</td>
+                    <td class="code"><pre>[{&#x27;True&#x27;: True, &#x27;False&#x27;: False, &#x27;None&#x27;: None}, {}, {}, {&#x27;paginator&#x27;: &lt;django.core.paginator.Paginator object at 0x10ecb7ec0&gt;, &#x27;page_obj&#x27;: &lt;Page 1 of 1&gt;, &#x27;is_paginated&#x27;: False, &#x27;object_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;article_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;linktype&#x27;: LinkShowType.I, &#x27;view&#x27;: &lt;blog.views.IndexView object at 0x10ecb62a0&gt;, &#x27;compressed&#x27;: {&#x27;name&#x27;: None}}]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>node</td>
+                    <td class="code"><pre>&lt;django.template.defaulttags.LoadNode object at 0x10edb4290&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;ExtendsNode: extends &#x27;share_layout/base.html&#x27;&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+            </details>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/base.py</code>, line 166, in _render
+          
+
+          
+            <div class="context" id="c4543718656">
+              
+                <ol start="159" class="pre-context" id="pre4543718656">
+                
+                  <li onclick="toggle('pre4543718656', 'post4543718656')"><pre>    def __repr__(self):</pre></li>
+                
+                  <li onclick="toggle('pre4543718656', 'post4543718656')"><pre>        return &#x27;&lt;%s template_string=&quot;%s...&quot;&gt;&#x27; % (</pre></li>
+                
+                  <li onclick="toggle('pre4543718656', 'post4543718656')"><pre>            self.__class__.__qualname__,</pre></li>
+                
+                  <li onclick="toggle('pre4543718656', 'post4543718656')"><pre>            self.source[:20].replace(&quot;\n&quot;, &quot;&quot;),</pre></li>
+                
+                  <li onclick="toggle('pre4543718656', 'post4543718656')"><pre>        )</pre></li>
+                
+                  <li onclick="toggle('pre4543718656', 'post4543718656')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre4543718656', 'post4543718656')"><pre>    def _render(self, context):</pre></li>
+                
+                </ol>
+              
+              <ol start="166" class="context-line">
+                <li onclick="toggle('pre4543718656', 'post4543718656')"><pre>        return self.nodelist.render(context)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='167' class="post-context" id="post4543718656">
+                  
+                  <li onclick="toggle('pre4543718656', 'post4543718656')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre4543718656', 'post4543718656')"><pre>    def render(self, context):</pre></li>
+                  
+                  <li onclick="toggle('pre4543718656', 'post4543718656')"><pre>        &quot;Display stage -- can be called many times&quot;</pre></li>
+                  
+                  <li onclick="toggle('pre4543718656', 'post4543718656')"><pre>        with context.render_context.push_state(self):</pre></li>
+                  
+                  <li onclick="toggle('pre4543718656', 'post4543718656')"><pre>            if context.template is None:</pre></li>
+                  
+                  <li onclick="toggle('pre4543718656', 'post4543718656')"><pre>                with context.bind_template(self):</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            
+              <details>
+                <summary class="commands">Local vars</summary>
+            
+            <table class="vars" id="v4543718656">
+              <thead>
+                <tr>
+                  <th scope="col">Variable</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>context</td>
+                    <td class="code"><pre>[{&#x27;True&#x27;: True, &#x27;False&#x27;: False, &#x27;None&#x27;: None}, {}, {}, {&#x27;paginator&#x27;: &lt;django.core.paginator.Paginator object at 0x10ecb7ec0&gt;, &#x27;page_obj&#x27;: &lt;Page 1 of 1&gt;, &#x27;is_paginated&#x27;: False, &#x27;object_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;article_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;linktype&#x27;: LinkShowType.I, &#x27;view&#x27;: &lt;blog.views.IndexView object at 0x10ecb62a0&gt;, &#x27;compressed&#x27;: {&#x27;name&#x27;: None}}]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;Template template_string=&quot;{% load static %}{%...&quot;&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+            </details>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/base.py</code>, line 1091, in render
+          
+
+          
+            <div class="context" id="c4543724160">
+              
+                <ol start="1084" class="pre-context" id="pre4543724160">
+                
+                  <li onclick="toggle('pre4543724160', 'post4543724160')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre4543724160', 'post4543724160')"><pre>class NodeList(list):</pre></li>
+                
+                  <li onclick="toggle('pre4543724160', 'post4543724160')"><pre>    # Set to True the first time a non-TextNode is inserted by</pre></li>
+                
+                  <li onclick="toggle('pre4543724160', 'post4543724160')"><pre>    # extend_nodelist().</pre></li>
+                
+                  <li onclick="toggle('pre4543724160', 'post4543724160')"><pre>    contains_nontext = False</pre></li>
+                
+                  <li onclick="toggle('pre4543724160', 'post4543724160')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre4543724160', 'post4543724160')"><pre>    def render(self, context):</pre></li>
+                
+                </ol>
+              
+              <ol start="1091" class="context-line">
+                <li onclick="toggle('pre4543724160', 'post4543724160')"><pre>        return SafeString(&quot;&quot;.join([node.render_annotated(context) for node in self]))
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='1092' class="post-context" id="post4543724160">
+                  
+                  <li onclick="toggle('pre4543724160', 'post4543724160')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre4543724160', 'post4543724160')"><pre>    def get_nodes_by_type(self, nodetype):</pre></li>
+                  
+                  <li onclick="toggle('pre4543724160', 'post4543724160')"><pre>        &quot;Return a list of all nodes of the given type&quot;</pre></li>
+                  
+                  <li onclick="toggle('pre4543724160', 'post4543724160')"><pre>        nodes = []</pre></li>
+                  
+                  <li onclick="toggle('pre4543724160', 'post4543724160')"><pre>        for node in self:</pre></li>
+                  
+                  <li onclick="toggle('pre4543724160', 'post4543724160')"><pre>            nodes.extend(node.get_nodes_by_type(nodetype))</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            
+              <details>
+                <summary class="commands">Local vars</summary>
+            
+            <table class="vars" id="v4543724160">
+              <thead>
+                <tr>
+                  <th scope="col">Variable</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>context</td>
+                    <td class="code"><pre>[{&#x27;True&#x27;: True, &#x27;False&#x27;: False, &#x27;None&#x27;: None}, {}, {}, {&#x27;paginator&#x27;: &lt;django.core.paginator.Paginator object at 0x10ecb7ec0&gt;, &#x27;page_obj&#x27;: &lt;Page 1 of 1&gt;, &#x27;is_paginated&#x27;: False, &#x27;object_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;article_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;linktype&#x27;: LinkShowType.I, &#x27;view&#x27;: &lt;blog.views.IndexView object at 0x10ecb62a0&gt;, &#x27;compressed&#x27;: {&#x27;name&#x27;: None}}]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>[&lt;django.template.defaulttags.LoadNode object at 0x10edb4290&gt;,
+ &lt;TextNode: &#x27;\n&#x27;&gt;,
+ &lt;django.template.defaulttags.LoadNode object at 0x10edb4320&gt;,
+ &lt;TextNode: &#x27;\n&#x27;&gt;,
+ &lt;django.template.defaulttags.LoadNode object at 0x10edb43b0&gt;,
+ &lt;TextNode: &#x27;\n&#x27;&gt;,
+ &lt;django.template.defaulttags.LoadNode object at 0x10edb43e0&gt;,
+ &lt;TextNode: &#x27;\n&lt;!DOCTYPE html&gt;\n&lt;!--[if &#x27;&gt;,
+ &lt;django.template.defaulttags.LoadNode object at 0x10edb4470&gt;,
+ &lt;TextNode: &#x27;\n    &#x27;&gt;,
+ &lt;django.template.library.SimpleNode object at 0x10edb44d0&gt;,
+ &lt;TextNode: &#x27;\n    &#x27;&gt;,
+ &lt;Block Node: header. Contents: [&lt;TextNode: &#x27;\n        &lt;!-- SEO插件会自动生成t&#x27;&gt;]&gt;,
+ &lt;TextNode: &#x27;\n    &lt;link rel=&quot;profile&quot; &#x27;&gt;,
+ StaticNode(varname=None, path=&lt;FilterExpression &quot;&#x27;blog/js/html5.js&#x27;&quot;&gt;),
+ &lt;TextNode: &#x27;&quot; type=&quot;text/javascript&quot;&gt;&#x27;&gt;,
+ &lt;Variable Node: SITE_NAME&gt;,
+ &lt;TextNode: &#x27; &amp;raquo; Feed&quot; href=&quot;/fee&#x27;&gt;,
+ StaticNode(varname=None, path=&lt;FilterExpression &quot;&#x27;blog/fonts/open-sans.css&#x27;&quot;&gt;),
+ &lt;TextNode: &#x27;&quot;&gt;\n    &#x27;&gt;,
+ &lt;compressor.templatetags.compress.CompressorNode object at 0x10edb50a0&gt;,
+ &lt;TextNode: &#x27;\n\n    &#x27;&gt;,
+ &lt;IfNode&gt;,
+ &lt;TextNode: &#x27;\n\n    &lt;!-- 插件head资源 --&gt;\n &#x27;&gt;,
+ &lt;django.template.library.SimpleNode object at 0x10edb5370&gt;,
+ &lt;TextNode: &#x27;\n&lt;/head&gt;\n\n&lt;body class=&quot;ho&#x27;&gt;,
+ &lt;Variable Node: SITE_NAME&gt;,
+ &lt;TextNode: &#x27;&quot; rel=&quot;home&quot;&gt;&#x27;&gt;,
+ &lt;Variable Node: SITE_NAME&gt;,
+ &lt;TextNode: &#x27;&lt;/a&gt;\n            &lt;/h1&gt;\n  &#x27;&gt;,
+ &lt;Variable Node: SITE_DESCRIPTION&gt;,
+ &lt;TextNode: &#x27;&lt;/h2&gt;\n        &lt;/hgroup&gt;\n &#x27;&gt;,
+ &lt;django.template.defaulttags.LoadNode object at 0x10edb5730&gt;,
+ &lt;TextNode: &#x27;\n        &#x27;&gt;,
+ &lt;IncludeNode: template=&lt;FilterExpression &quot;&#x27;share_layout/nav.html&#x27;&quot;&gt;&gt;,
+ &lt;TextNode: &#x27;\n\n\n    &lt;/header&gt;&lt;!-- #mas&#x27;&gt;,
+ &lt;Block Node: content. Contents: [&lt;TextNode: &#x27;\n        &#x27;&gt;]&gt;,
+ &lt;TextNode: &#x27;\n\n\n        &#x27;&gt;,
+ &lt;Block Node: sidebar. Contents: [&lt;TextNode: &#x27;\n        &#x27;&gt;]&gt;,
+ &lt;TextNode: &#x27;\n\n\n    &lt;/div&gt;&lt;!-- #main .&#x27;&gt;,
+ &lt;IncludeNode: template=&lt;FilterExpression &quot;&#x27;share_layout/footer.html&#x27;&quot;&gt;&gt;,
+ &lt;TextNode: &#x27;\n&lt;/div&gt;&lt;!-- #page --&gt;\n\n&lt;!&#x27;&gt;,
+ &lt;compressor.templatetags.compress.CompressorNode object at 0x10edb6120&gt;,
+ &lt;TextNode: &#x27;\n\n&lt;!-- MathJax智能加载器 --&gt;\n&lt;&#x27;&gt;,
+ StaticNode(varname=None, path=&lt;FilterExpression &quot;&#x27;blog/js/mathjax-loader.js&#x27;&quot;&gt;),
+ &lt;TextNode: &#x27;&quot; async defer&gt;&lt;/script&gt;\n\n&#x27;&gt;,
+ &lt;Block Node: footer. Contents: [&lt;TextNode: &#x27;\n&#x27;&gt;]&gt;,
+ &lt;TextNode: &#x27;\n\n&lt;!-- 插件body资源 --&gt;\n&#x27;&gt;,
+ &lt;django.template.library.SimpleNode object at 0x10edb6420&gt;,
+ &lt;TextNode: &#x27;\n&lt;/body&gt;\n&lt;/html&gt;\n&#x27;&gt;]</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+            </details>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/base.py</code>, line 1052, in render_annotated
+          
+
+          
+            <div class="context" id="c4546209664">
+              
+                <ol start="1045" class="pre-context" id="pre4546209664">
+                
+                  <li onclick="toggle('pre4546209664', 'post4546209664')"><pre>        &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre4546209664', 'post4546209664')"><pre>        Render the node. If debug is True and an exception occurs during</pre></li>
+                
+                  <li onclick="toggle('pre4546209664', 'post4546209664')"><pre>        rendering, the exception is annotated with contextual line information</pre></li>
+                
+                  <li onclick="toggle('pre4546209664', 'post4546209664')"><pre>        where it occurred in the template. For internal usage this method is</pre></li>
+                
+                  <li onclick="toggle('pre4546209664', 'post4546209664')"><pre>        preferred over using the render method directly.</pre></li>
+                
+                  <li onclick="toggle('pre4546209664', 'post4546209664')"><pre>        &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre4546209664', 'post4546209664')"><pre>        try:</pre></li>
+                
+                </ol>
+              
+              <ol start="1052" class="context-line">
+                <li onclick="toggle('pre4546209664', 'post4546209664')"><pre>            return self.render(context)
+                         ^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='1053' class="post-context" id="post4546209664">
+                  
+                  <li onclick="toggle('pre4546209664', 'post4546209664')"><pre>        except Exception as e:</pre></li>
+                  
+                  <li onclick="toggle('pre4546209664', 'post4546209664')"><pre>            if context.template.engine.debug:</pre></li>
+                  
+                  <li onclick="toggle('pre4546209664', 'post4546209664')"><pre>                # Store the actual node that caused the exception.</pre></li>
+                  
+                  <li onclick="toggle('pre4546209664', 'post4546209664')"><pre>                if not hasattr(e, &quot;_culprit_node&quot;):</pre></li>
+                  
+                  <li onclick="toggle('pre4546209664', 'post4546209664')"><pre>                    e._culprit_node = self</pre></li>
+                  
+                  <li onclick="toggle('pre4546209664', 'post4546209664')"><pre>                if (</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            
+              <details>
+                <summary class="commands">Local vars</summary>
+            
+            <table class="vars" id="v4546209664">
+              <thead>
+                <tr>
+                  <th scope="col">Variable</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>context</td>
+                    <td class="code"><pre>[{&#x27;True&#x27;: True, &#x27;False&#x27;: False, &#x27;None&#x27;: None}, {}, {}, {&#x27;paginator&#x27;: &lt;django.core.paginator.Paginator object at 0x10ecb7ec0&gt;, &#x27;page_obj&#x27;: &lt;Page 1 of 1&gt;, &#x27;is_paginated&#x27;: False, &#x27;object_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;article_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;linktype&#x27;: LinkShowType.I, &#x27;view&#x27;: &lt;blog.views.IndexView object at 0x10ecb62a0&gt;, &#x27;compressed&#x27;: {&#x27;name&#x27;: None}}]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;Block Node: sidebar. Contents: [&lt;TextNode: &#x27;\n        &#x27;&gt;]&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+            </details>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/loader_tags.py</code>, line 66, in render
+          
+
+          
+            <div class="context" id="c4543724800">
+              
+                <ol start="59" class="pre-context" id="pre4543724800">
+                
+                  <li onclick="toggle('pre4543724800', 'post4543724800')"><pre>                if block is None:</pre></li>
+                
+                  <li onclick="toggle('pre4543724800', 'post4543724800')"><pre>                    block = self</pre></li>
+                
+                  <li onclick="toggle('pre4543724800', 'post4543724800')"><pre>                # Create new block so we can store context without</pre></li>
+                
+                  <li onclick="toggle('pre4543724800', 'post4543724800')"><pre>                # thread-safety issues.</pre></li>
+                
+                  <li onclick="toggle('pre4543724800', 'post4543724800')"><pre>                block = type(self)(block.name, block.nodelist)</pre></li>
+                
+                  <li onclick="toggle('pre4543724800', 'post4543724800')"><pre>                block.context = context</pre></li>
+                
+                  <li onclick="toggle('pre4543724800', 'post4543724800')"><pre>                context[&quot;block&quot;] = block</pre></li>
+                
+                </ol>
+              
+              <ol start="66" class="context-line">
+                <li onclick="toggle('pre4543724800', 'post4543724800')"><pre>                result = block.nodelist.render(context)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='67' class="post-context" id="post4543724800">
+                  
+                  <li onclick="toggle('pre4543724800', 'post4543724800')"><pre>                if push is not None:</pre></li>
+                  
+                  <li onclick="toggle('pre4543724800', 'post4543724800')"><pre>                    block_context.push(self.name, push)</pre></li>
+                  
+                  <li onclick="toggle('pre4543724800', 'post4543724800')"><pre>        return result</pre></li>
+                  
+                  <li onclick="toggle('pre4543724800', 'post4543724800')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre4543724800', 'post4543724800')"><pre>    def super(self):</pre></li>
+                  
+                  <li onclick="toggle('pre4543724800', 'post4543724800')"><pre>        if not hasattr(self, &quot;context&quot;):</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            
+              <details>
+                <summary class="commands">Local vars</summary>
+            
+            <table class="vars" id="v4543724800">
+              <thead>
+                <tr>
+                  <th scope="col">Variable</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>block</td>
+                    <td class="code"><pre>&lt;Block Node: sidebar. Contents: [&lt;TextNode: &#x27;\n    &#x27;&gt;, &lt;django.template.library.InclusionNode object at 0x10ed8c3e0&gt;, &lt;TextNode: &#x27;\n&#x27;&gt;]&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>block_context</td>
+                    <td class="code"><pre>&lt;BlockContext: blocks=defaultdict(&lt;class &#x27;list&#x27;&gt;, {&#x27;header&#x27;: [&lt;Block Node: header. Contents: [&lt;TextNode: &#x27;\n        &lt;!-- SEO插件会自动生成t&#x27;&gt;]&gt;, &lt;Block Node: header. Contents: [&lt;TextNode: &#x27;\n    &#x27;&gt;, &lt;IfNode&gt;, &lt;TextNode: &#x27;\n    &lt;meta name=&quot;descript&#x27;&gt;, &lt;Variable Node: SITE_SEO_DESCRIPTION&gt;, &lt;TextNode: &#x27;&quot;/&gt;\n    &lt;meta name=&quot;keywo&#x27;&gt;, &lt;Variable Node: SITE_KEYWORDS&gt;, &lt;TextNode: &#x27;&quot;/&gt;\n    &lt;meta property=&quot;o&#x27;&gt;, &lt;Variable Node: SITE_NAME&gt;, &lt;TextNode: &#x27;&quot;/&gt;\n    &lt;meta property=&quot;o&#x27;&gt;, &lt;Variable Node: SITE_DESCRIPTION&gt;, &lt;TextNode: &#x27;&quot;/&gt;\n    &lt;meta property=&quot;o&#x27;&gt;, &lt;Variable Node: SITE_BASE_URL&gt;, &lt;TextNode: &#x27;&quot;/&gt;\n    &lt;meta property=&quot;o&#x27;&gt;, &lt;Variable Node: SITE_NAME&gt;, &lt;TextNode: &#x27;&quot;/&gt;\n&#x27;&gt;]&gt;], &#x27;content&#x27;: [&lt;Block Node: content. Contents: [&lt;TextNode: &#x27;\n        &#x27;&gt;]&gt;, &lt;Block Node: content. Contents: [&lt;TextNode: &#x27;\n    &lt;div id=&quot;primary&quot; cl&#x27;&gt;, &lt;IfNode&gt;, &lt;TextNode: &#x27;\n\n            &#x27;&gt;, &lt;ForNode: for article in article_list, tail_len: 3&gt;, &lt;TextNode: &#x27;\n            &#x27;&gt;, &lt;IfNode&gt;, &lt;TextNode: &#x27;\n        &lt;/div&gt;&lt;!-- #cont&#x27;&gt;]&gt;], &#x27;sidebar&#x27;: [&lt;Block Node: sidebar. Contents: [&lt;TextNode: &#x27;\n        &#x27;&gt;]&gt;], &#x27;compress_css&#x27;: [&lt;Block Node: compress_css. Contents: [&lt;TextNode: &#x27;\n        &#x27;&gt;]&gt;], &#x27;compress_js&#x27;: [&lt;Block Node: compress_js. Contents: [&lt;TextNode: &#x27;\n    &#x27;&gt;]&gt;], &#x27;footer&#x27;: [&lt;Block Node: footer. Contents: [&lt;TextNode: &#x27;\n&#x27;&gt;]&gt;]})&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>context</td>
+                    <td class="code"><pre>[{&#x27;True&#x27;: True, &#x27;False&#x27;: False, &#x27;None&#x27;: None}, {}, {}, {&#x27;paginator&#x27;: &lt;django.core.paginator.Paginator object at 0x10ecb7ec0&gt;, &#x27;page_obj&#x27;: &lt;Page 1 of 1&gt;, &#x27;is_paginated&#x27;: False, &#x27;object_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;article_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;linktype&#x27;: LinkShowType.I, &#x27;view&#x27;: &lt;blog.views.IndexView object at 0x10ecb62a0&gt;, &#x27;compressed&#x27;: {&#x27;name&#x27;: None}}]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>push</td>
+                    <td class="code"><pre>&lt;Block Node: sidebar. Contents: [&lt;TextNode: &#x27;\n    &#x27;&gt;, &lt;django.template.library.InclusionNode object at 0x10ed8c3e0&gt;, &lt;TextNode: &#x27;\n&#x27;&gt;]&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;Block Node: sidebar. Contents: [&lt;TextNode: &#x27;\n        &#x27;&gt;]&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+            </details>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/base.py</code>, line 1091, in render
+          
+
+          
+            <div class="context" id="c4543723712">
+              
+                <ol start="1084" class="pre-context" id="pre4543723712">
+                
+                  <li onclick="toggle('pre4543723712', 'post4543723712')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre4543723712', 'post4543723712')"><pre>class NodeList(list):</pre></li>
+                
+                  <li onclick="toggle('pre4543723712', 'post4543723712')"><pre>    # Set to True the first time a non-TextNode is inserted by</pre></li>
+                
+                  <li onclick="toggle('pre4543723712', 'post4543723712')"><pre>    # extend_nodelist().</pre></li>
+                
+                  <li onclick="toggle('pre4543723712', 'post4543723712')"><pre>    contains_nontext = False</pre></li>
+                
+                  <li onclick="toggle('pre4543723712', 'post4543723712')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre4543723712', 'post4543723712')"><pre>    def render(self, context):</pre></li>
+                
+                </ol>
+              
+              <ol start="1091" class="context-line">
+                <li onclick="toggle('pre4543723712', 'post4543723712')"><pre>        return SafeString(&quot;&quot;.join([node.render_annotated(context) for node in self]))
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='1092' class="post-context" id="post4543723712">
+                  
+                  <li onclick="toggle('pre4543723712', 'post4543723712')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre4543723712', 'post4543723712')"><pre>    def get_nodes_by_type(self, nodetype):</pre></li>
+                  
+                  <li onclick="toggle('pre4543723712', 'post4543723712')"><pre>        &quot;Return a list of all nodes of the given type&quot;</pre></li>
+                  
+                  <li onclick="toggle('pre4543723712', 'post4543723712')"><pre>        nodes = []</pre></li>
+                  
+                  <li onclick="toggle('pre4543723712', 'post4543723712')"><pre>        for node in self:</pre></li>
+                  
+                  <li onclick="toggle('pre4543723712', 'post4543723712')"><pre>            nodes.extend(node.get_nodes_by_type(nodetype))</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            
+              <details>
+                <summary class="commands">Local vars</summary>
+            
+            <table class="vars" id="v4543723712">
+              <thead>
+                <tr>
+                  <th scope="col">Variable</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>context</td>
+                    <td class="code"><pre>[{&#x27;True&#x27;: True, &#x27;False&#x27;: False, &#x27;None&#x27;: None}, {}, {}, {&#x27;paginator&#x27;: &lt;django.core.paginator.Paginator object at 0x10ecb7ec0&gt;, &#x27;page_obj&#x27;: &lt;Page 1 of 1&gt;, &#x27;is_paginated&#x27;: False, &#x27;object_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;article_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;linktype&#x27;: LinkShowType.I, &#x27;view&#x27;: &lt;blog.views.IndexView object at 0x10ecb62a0&gt;, &#x27;compressed&#x27;: {&#x27;name&#x27;: None}}]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>[&lt;TextNode: &#x27;\n    &#x27;&gt;,
+ &lt;django.template.library.InclusionNode object at 0x10ed8c3e0&gt;,
+ &lt;TextNode: &#x27;\n&#x27;&gt;]</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+            </details>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/base.py</code>, line 1052, in render_annotated
+          
+
+          
+            <div class="context" id="c4543718272">
+              
+                <ol start="1045" class="pre-context" id="pre4543718272">
+                
+                  <li onclick="toggle('pre4543718272', 'post4543718272')"><pre>        &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre4543718272', 'post4543718272')"><pre>        Render the node. If debug is True and an exception occurs during</pre></li>
+                
+                  <li onclick="toggle('pre4543718272', 'post4543718272')"><pre>        rendering, the exception is annotated with contextual line information</pre></li>
+                
+                  <li onclick="toggle('pre4543718272', 'post4543718272')"><pre>        where it occurred in the template. For internal usage this method is</pre></li>
+                
+                  <li onclick="toggle('pre4543718272', 'post4543718272')"><pre>        preferred over using the render method directly.</pre></li>
+                
+                  <li onclick="toggle('pre4543718272', 'post4543718272')"><pre>        &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre4543718272', 'post4543718272')"><pre>        try:</pre></li>
+                
+                </ol>
+              
+              <ol start="1052" class="context-line">
+                <li onclick="toggle('pre4543718272', 'post4543718272')"><pre>            return self.render(context)
+                         ^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='1053' class="post-context" id="post4543718272">
+                  
+                  <li onclick="toggle('pre4543718272', 'post4543718272')"><pre>        except Exception as e:</pre></li>
+                  
+                  <li onclick="toggle('pre4543718272', 'post4543718272')"><pre>            if context.template.engine.debug:</pre></li>
+                  
+                  <li onclick="toggle('pre4543718272', 'post4543718272')"><pre>                # Store the actual node that caused the exception.</pre></li>
+                  
+                  <li onclick="toggle('pre4543718272', 'post4543718272')"><pre>                if not hasattr(e, &quot;_culprit_node&quot;):</pre></li>
+                  
+                  <li onclick="toggle('pre4543718272', 'post4543718272')"><pre>                    e._culprit_node = self</pre></li>
+                  
+                  <li onclick="toggle('pre4543718272', 'post4543718272')"><pre>                if (</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            
+              <details>
+                <summary class="commands">Local vars</summary>
+            
+            <table class="vars" id="v4543718272">
+              <thead>
+                <tr>
+                  <th scope="col">Variable</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>context</td>
+                    <td class="code"><pre>[{&#x27;True&#x27;: True, &#x27;False&#x27;: False, &#x27;None&#x27;: None}, {}, {}, {&#x27;paginator&#x27;: &lt;django.core.paginator.Paginator object at 0x10ecb7ec0&gt;, &#x27;page_obj&#x27;: &lt;Page 1 of 1&gt;, &#x27;is_paginated&#x27;: False, &#x27;object_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;article_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;linktype&#x27;: LinkShowType.I, &#x27;view&#x27;: &lt;blog.views.IndexView object at 0x10ecb62a0&gt;, &#x27;compressed&#x27;: {&#x27;name&#x27;: None}}]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.template.library.InclusionNode object at 0x10ed8c3e0&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+            </details>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/library.py</code>, line 363, in render
+          
+
+          
+            <div class="context" id="c4543720320">
+              
+                <ol start="356" class="pre-context" id="pre4543720320">
+                
+                  <li onclick="toggle('pre4543720320', 'post4543720320')"><pre>    def render(self, context):</pre></li>
+                
+                  <li onclick="toggle('pre4543720320', 'post4543720320')"><pre>        &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre4543720320', 'post4543720320')"><pre>        Render the specified template and context. Cache the template object</pre></li>
+                
+                  <li onclick="toggle('pre4543720320', 'post4543720320')"><pre>        in render_context to avoid reparsing and loading when used in a for</pre></li>
+                
+                  <li onclick="toggle('pre4543720320', 'post4543720320')"><pre>        loop.</pre></li>
+                
+                  <li onclick="toggle('pre4543720320', 'post4543720320')"><pre>        &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre4543720320', 'post4543720320')"><pre>        resolved_args, resolved_kwargs = self.get_resolved_arguments(context)</pre></li>
+                
+                </ol>
+              
+              <ol start="363" class="context-line">
+                <li onclick="toggle('pre4543720320', 'post4543720320')"><pre>        _dict = self.func(*resolved_args, **resolved_kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='364' class="post-context" id="post4543720320">
+                  
+                  <li onclick="toggle('pre4543720320', 'post4543720320')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre4543720320', 'post4543720320')"><pre>        t = context.render_context.get(self)</pre></li>
+                  
+                  <li onclick="toggle('pre4543720320', 'post4543720320')"><pre>        if t is None:</pre></li>
+                  
+                  <li onclick="toggle('pre4543720320', 'post4543720320')"><pre>            if isinstance(self.filename, Template):</pre></li>
+                  
+                  <li onclick="toggle('pre4543720320', 'post4543720320')"><pre>                t = self.filename</pre></li>
+                  
+                  <li onclick="toggle('pre4543720320', 'post4543720320')"><pre>            elif isinstance(getattr(self.filename, &quot;template&quot;, None), Template):</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            
+              <details>
+                <summary class="commands">Local vars</summary>
+            
+            <table class="vars" id="v4543720320">
+              <thead>
+                <tr>
+                  <th scope="col">Variable</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>context</td>
+                    <td class="code"><pre>[{&#x27;True&#x27;: True, &#x27;False&#x27;: False, &#x27;None&#x27;: None}, {}, {}, {&#x27;paginator&#x27;: &lt;django.core.paginator.Paginator object at 0x10ecb7ec0&gt;, &#x27;page_obj&#x27;: &lt;Page 1 of 1&gt;, &#x27;is_paginated&#x27;: False, &#x27;object_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;article_list&#x27;: [&lt;Article: Test Article&gt;], &#x27;linktype&#x27;: LinkShowType.I, &#x27;view&#x27;: &lt;blog.views.IndexView object at 0x10ecb62a0&gt;, &#x27;compressed&#x27;: {&#x27;name&#x27;: None}}]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>resolved_args</td>
+                    <td class="code"><pre>[&lt;SimpleLazyObject: &lt;django.contrib.auth.models.AnonymousUser object at 0x10ecb5eb0&gt;&gt;,
+ LinkShowType.I]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>resolved_kwargs</td>
+                    <td class="code"><pre>{}</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.template.library.InclusionNode object at 0x10ed8c3e0&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+            </details>
+          
+        </li>
+      
+        
+        <li class="frame user">
+          
+            <code class="fname">/Users/lvzhe/github/DjangoBlog/blog/templatetags/blog_tags.py</code>, line 226, in load_sidebar
+          
+
+          
+            <div class="context" id="c4543724544">
+              
+                <ol start="219" class="pre-context" id="pre4543724544">
+                
+                  <li onclick="toggle('pre4543724544', 'post4543724544')"><pre>        extra_sidebars = SideBar.objects.filter(</pre></li>
+                
+                  <li onclick="toggle('pre4543724544', 'post4543724544')"><pre>            is_enable=True).order_by(&#x27;sequence&#x27;)</pre></li>
+                
+                  <li onclick="toggle('pre4543724544', 'post4543724544')"><pre>        most_read_articles = Article.objects.filter(status=&#x27;p&#x27;).order_by(</pre></li>
+                
+                  <li onclick="toggle('pre4543724544', 'post4543724544')"><pre>            &#x27;-views&#x27;)[:blogsetting.sidebar_article_count]</pre></li>
+                
+                  <li onclick="toggle('pre4543724544', 'post4543724544')"><pre>        dates = Article.objects.datetimes(&#x27;creation_time&#x27;, &#x27;month&#x27;, order=&#x27;DESC&#x27;)</pre></li>
+                
+                  <li onclick="toggle('pre4543724544', 'post4543724544')"><pre>        links = Links.objects.filter(is_enable=True).filter(</pre></li>
+                
+                  <li onclick="toggle('pre4543724544', 'post4543724544')"><pre>            Q(show_type=str(linktype)) | Q(show_type=LinkShowType.A))</pre></li>
+                
+                </ol>
+              
+              <ol start="226" class="context-line">
+                <li onclick="toggle('pre4543724544', 'post4543724544')"><pre>        commment_list = Comment.objects.filter(is_enable=True).order_by(
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='227' class="post-context" id="post4543724544">
+                  
+                  <li onclick="toggle('pre4543724544', 'post4543724544')"><pre>            &#x27;-id&#x27;)[:blogsetting.sidebar_comment_count]</pre></li>
+                  
+                  <li onclick="toggle('pre4543724544', 'post4543724544')"><pre>        # 标签云 计算字体大小</pre></li>
+                  
+                  <li onclick="toggle('pre4543724544', 'post4543724544')"><pre>        # 根据总数计算出平均值 大小为 (数目/平均值)*步长</pre></li>
+                  
+                  <li onclick="toggle('pre4543724544', 'post4543724544')"><pre>        increment = 5</pre></li>
+                  
+                  <li onclick="toggle('pre4543724544', 'post4543724544')"><pre>        tags = Tag.objects.all()</pre></li>
+                  
+                  <li onclick="toggle('pre4543724544', 'post4543724544')"><pre>        sidebar_tags = None</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            
+              <details>
+                <summary class="commands">Local vars</summary>
+            
+            <table class="vars" id="v4543724544">
+              <thead>
+                <tr>
+                  <th scope="col">Variable</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>blogsetting</td>
+                    <td class="code"><pre>&lt;BlogSettings: djangoblog&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>dates</td>
+                    <td class="code"><pre>&lt;QuerySet [datetime.datetime(2026, 1, 1, 0, 0)]&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>extra_sidebars</td>
+                    <td class="code"><pre>&lt;QuerySet []&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>get_blog_setting</td>
+                    <td class="code"><pre>&lt;function get_blog_setting at 0x10bb90360&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>links</td>
+                    <td class="code"><pre>&lt;QuerySet []&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>linktype</td>
+                    <td class="code"><pre>LinkShowType.I</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>most_read_articles</td>
+                    <td class="code"><pre>&lt;QuerySet [&lt;Article: Test Article&gt;]&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>recent_articles</td>
+                    <td class="code"><pre>&lt;QuerySet [&lt;Article: Test Article&gt;]&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>sidebar_categorys</td>
+                    <td class="code"><pre>&lt;QuerySet [&lt;Category: Tech&gt;]&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>user</td>
+                    <td class="code"><pre>&lt;SimpleLazyObject: &lt;django.contrib.auth.models.AnonymousUser object at 0x10ecb5eb0&gt;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>value</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+            </details>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/db/models/query.py</code>, line 418, in __getitem__
+          
+
+          
+            <div class="context" id="c4543714112">
+              
+                <ol start="411" class="pre-context" id="pre4543714112">
+                
+                  <li onclick="toggle('pre4543714112', 'post4543714112')"><pre>                &quot;QuerySet indices must be integers or slices, not %s.&quot;</pre></li>
+                
+                  <li onclick="toggle('pre4543714112', 'post4543714112')"><pre>                % type(k).__name__</pre></li>
+                
+                  <li onclick="toggle('pre4543714112', 'post4543714112')"><pre>            )</pre></li>
+                
+                  <li onclick="toggle('pre4543714112', 'post4543714112')"><pre>        if (isinstance(k, int) and k &lt; 0) or (</pre></li>
+                
+                  <li onclick="toggle('pre4543714112', 'post4543714112')"><pre>            isinstance(k, slice)</pre></li>
+                
+                  <li onclick="toggle('pre4543714112', 'post4543714112')"><pre>            and (</pre></li>
+                
+                  <li onclick="toggle('pre4543714112', 'post4543714112')"><pre>                (k.start is not None and k.start &lt; 0)</pre></li>
+                
+                </ol>
+              
+              <ol start="418" class="context-line">
+                <li onclick="toggle('pre4543714112', 'post4543714112')"><pre>                or (k.stop is not None and k.stop &lt; 0)
+                                                ^^^^^^^^^^</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='419' class="post-context" id="post4543714112">
+                  
+                  <li onclick="toggle('pre4543714112', 'post4543714112')"><pre>            )</pre></li>
+                  
+                  <li onclick="toggle('pre4543714112', 'post4543714112')"><pre>        ):</pre></li>
+                  
+                  <li onclick="toggle('pre4543714112', 'post4543714112')"><pre>            raise ValueError(&quot;Negative indexing is not supported.&quot;)</pre></li>
+                  
+                  <li onclick="toggle('pre4543714112', 'post4543714112')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre4543714112', 'post4543714112')"><pre>        if self._result_cache is not None:</pre></li>
+                  
+                  <li onclick="toggle('pre4543714112', 'post4543714112')"><pre>            return self._result_cache[k]</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            
+              <details>
+                <summary class="commands">Local vars</summary>
+            
+            <table class="vars" id="v4543714112">
+              <thead>
+                <tr>
+                  <th scope="col">Variable</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>k</td>
+                    <td class="code"><pre>slice(None, &#x27;5&#x27;, None)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;QuerySet []&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+            </details>
+          
+        </li>
+      
+    </ul>
+  </div>
+
+  <form action="https://dpaste.com/" name="pasteform" id="pasteform" method="post">
+  <div id="pastebinTraceback" class="pastebin">
+    <input type="hidden" name="language" value="PythonConsole">
+    <input type="hidden" name="title"
+      value="TypeError at /">
+    <input type="hidden" name="source" value="Django Dpaste Agent">
+    <input type="hidden" name="poster" value="Django">
+    <textarea name="content" id="traceback_area" cols="140" rows="25">
+Environment:
+
+
+Request Method: GET
+Request URL: http://127.0.0.1:8000/
+
+Django Version: 6.0.1
+Python Version: 3.12.12
+Installed Applications:
+[&#x27;django.contrib.admin.apps.SimpleAdminConfig&#x27;,
+ &#x27;django.contrib.auth&#x27;,
+ &#x27;django.contrib.contenttypes&#x27;,
+ &#x27;django.contrib.sessions&#x27;,
+ &#x27;django.contrib.messages&#x27;,
+ &#x27;django.contrib.staticfiles&#x27;,
+ &#x27;django.contrib.sites&#x27;,
+ &#x27;django.contrib.sitemaps&#x27;,
+ &#x27;mdeditor&#x27;,
+ &#x27;haystack&#x27;,
+ &#x27;blog&#x27;,
+ &#x27;accounts&#x27;,
+ &#x27;comments&#x27;,
+ &#x27;oauth&#x27;,
+ &#x27;servermanager&#x27;,
+ &#x27;owntracks&#x27;,
+ &#x27;compressor&#x27;,
+ &#x27;djangoblog&#x27;]
+Installed Middleware:
+[&#x27;django.middleware.security.SecurityMiddleware&#x27;,
+ &#x27;django.contrib.sessions.middleware.SessionMiddleware&#x27;,
+ &#x27;django.middleware.locale.LocaleMiddleware&#x27;,
+ &#x27;django.middleware.gzip.GZipMiddleware&#x27;,
+ &#x27;django.middleware.common.CommonMiddleware&#x27;,
+ &#x27;django.middleware.csrf.CsrfViewMiddleware&#x27;,
+ &#x27;django.contrib.auth.middleware.AuthenticationMiddleware&#x27;,
+ &#x27;django.contrib.messages.middleware.MessageMiddleware&#x27;,
+ &#x27;django.middleware.clickjacking.XFrameOptionsMiddleware&#x27;,
+ &#x27;django.middleware.http.ConditionalGetMiddleware&#x27;,
+ &#x27;blog.middleware.OnlineMiddleware&#x27;]
+
+
+Template error:
+In template /Users/lvzhe/github/DjangoBlog/templates/blog/article_index.html, error at line 41
+   &#x27;&lt;&#x27; not supported between instances of &#x27;str&#x27; and &#x27;int&#x27;
+   31 :             {% endfor %}
+   32 :             {% if is_paginated %}
+   33 :                 {% load_pagination_info page_obj page_type tag_name %}
+   34 : 
+   35 :             {% endif %}
+   36 :         &lt;/div&gt;&lt;!-- #content --&gt;
+   37 :     &lt;/div&gt;&lt;!-- #primary --&gt;
+   38 : 
+   39 : {% endblock %}
+   40 : {% block sidebar %}
+   41 :      {% load_sidebar user linktype %} 
+   42 : {% endblock %}
+
+Traceback (most recent call last):
+  File "/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString(&quot;&quot;.join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString(&quot;&quot;.join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString(&quot;&quot;.join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/template/library.py", line 363, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lvzhe/github/DjangoBlog/blog/templatetags/blog_tags.py", line 226, in load_sidebar
+    commment_list = Comment.objects.filter(is_enable=True).order_by(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lvzhe/github/DjangoBlog/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 418, in __getitem__
+    or (k.stop is not None and k.stop &lt; 0)
+                               ^^^^^^^^^^
+
+Exception Type: TypeError at /
+Exception Value: &#x27;&lt;&#x27; not supported between instances of &#x27;str&#x27; and &#x27;int&#x27;
+</textarea>
+  <br><br>
+  <input type="submit" value="Share this traceback on a public website">
+  </div>
+</form>
+
+</div>
+
+
+<div id="requestinfo">
+  <h2>Request information</h2>
+
+
+  
+    <h3 id="user-info">USER</h3>
+    <p>AnonymousUser</p>
+  
+
+  <h3 id="get-info">GET</h3>
+  
+    <p>No GET data</p>
+  
+
+  <h3 id="post-info">POST</h3>
+  
+    <p>No POST data</p>
+  
+
+  <h3 id="files-info">FILES</h3>
+  
+    <p>No FILES data</p>
+  
+
+  <h3 id="cookie-info">COOKIES</h3>
+  
+    <p>No cookie data</p>
+  
+
+  <h3 id="meta-info">META</h3>
+  <table class="req">
+    <thead>
+      <tr>
+        <th scope="col">Variable</th>
+        <th scope="col">Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td>AI_AGENT</td>
+          <td class="code"><pre>&#x27;TRAE&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>BUNDLED_DEBUGPY_PATH</td>
+          <td class="code"><pre>&#x27;/Users/lvzhe/.trae-cn/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/libs/debugpy&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COLORTERM</td>
+          <td class="code"><pre>&#x27;truecolor&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMMAND_MODE</td>
+          <td class="code"><pre>&#x27;unix2003&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CONTENT_LENGTH</td>
+          <td class="code"><pre>&#x27;&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CONTENT_TYPE</td>
+          <td class="code"><pre>&#x27;text/plain&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DJANGO_SETTINGS_MODULE</td>
+          <td class="code"><pre>&#x27;djangoblog.settings&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILESYSTEM_CASE_SENSITIVE</td>
+          <td class="code"><pre>&#x27;false&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>GATEWAY_INTERFACE</td>
+          <td class="code"><pre>&#x27;CGI/1.1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>GIT_ASKPASS</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>GIT_PAGER</td>
+          <td class="code"><pre>&#x27;&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HOME</td>
+          <td class="code"><pre>&#x27;/Users/lvzhe&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_ACCEPT</td>
+          <td class="code"><pre>&#x27;*/*&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_HOST</td>
+          <td class="code"><pre>&#x27;127.0.0.1:8000&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_USER_AGENT</td>
+          <td class="code"><pre>&#x27;curl/8.7.1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANG</td>
+          <td class="code"><pre>&#x27;C.UTF-8&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LESS</td>
+          <td class="code"><pre>&#x27;-R&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGNAME</td>
+          <td class="code"><pre>&#x27;lvzhe&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LSCOLORS</td>
+          <td class="code"><pre>&#x27;Gxfxcxdxbxegedabagacad&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LS_COLORS</td>
+          <td class="code"><pre>&#x27;di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MallocNanoZone</td>
+          <td class="code"><pre>&#x27;0&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>OLDPWD</td>
+          <td class="code"><pre>&#x27;/Users/lvzhe/github/DjangoBlog&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ORIGINAL_XDG_CURRENT_DESKTOP</td>
+          <td class="code"><pre>&#x27;undefined&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>OSLogRateLimit</td>
+          <td class="code"><pre>&#x27;64&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PAGER</td>
+          <td class="code"><pre>&#x27;&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PATH</td>
+          <td class="code"><pre>(&#x27;/Users/lvzhe/github/DjangoBlog/.venv/bin:/Users/lvzhe/github/DjangoBlog/.venv/bin:/Users/lvzhe/.trae-cn/sdks/workspaces/5c77bfae/versions/node/current:/Users/lvzhe/.trae-cn/sdks/versions/node/current:/Users/lvzhe/.antigravity/antigravity/bin:/Users/lvzhe/.trae-cn/sdks/workspaces/5c77bfae/versions/node/current:/Users/lvzhe/.trae-cn/sdks/versions/node/current:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pmk/env/global/bin:/usr/local/share/dotnet:~/.dotnet/tools:/opt/homebrew/bin:/Applications/Trae &#x27;
+ &#x27;CN.app/Contents/Resources/app/bin:/Users/lvzhe/.trae-cn/sdks/workspaces/5c77bfae/versions/node/current:/Users/lvzhe/.trae-cn/sdks/versions/node/current:/Users/lvzhe/.antigravity/antigravity/bin:/Users/lvzhe/.local/bin:/Users/lvzhe/Library/pnpm:/Users/lvzhe/.trae-cn/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts&#x27;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PATH_INFO</td>
+          <td class="code"><pre>&#x27;/&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PNPM_HOME</td>
+          <td class="code"><pre>&#x27;/Users/lvzhe/Library/pnpm&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PS1</td>
+          <td class="code"><pre>&#x27;((.venv) ) ((.venv) ) \n(TraeAI-6) %~ [%?] $ &#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PWD</td>
+          <td class="code"><pre>&#x27;/Users/lvzhe/github/DjangoBlog&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PYDEVD_DISABLE_FILE_VALIDATION</td>
+          <td class="code"><pre>&#x27;1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PYTHONSTARTUP</td>
+          <td class="code"><pre>(&#x27;/Users/lvzhe/Library/Application Support/Trae &#x27;
+ &#x27;CN/User/workspaceStorage/5c77bfae4fee875d8c2a286da3dfe4c5/ms-python.python/pythonrc.py&#x27;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PYTHON_BASIC_REPL</td>
+          <td class="code"><pre>&#x27;1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>QUERY_STRING</td>
+          <td class="code"><pre>&#x27;&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>REMOTE_ADDR</td>
+          <td class="code"><pre>&#x27;127.0.0.1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>REMOTE_HOST</td>
+          <td class="code"><pre>&#x27;&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>REQUEST_METHOD</td>
+          <td class="code"><pre>&#x27;GET&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>RUN_MAIN</td>
+          <td class="code"><pre>&#x27;true&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SAFE_RM_ALLOWED_PATH</td>
+          <td class="code"><pre>&#x27;/Users/lvzhe/github/DjangoBlog&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SAFE_RM_AUTO_ADD_TEMP</td>
+          <td class="code"><pre>&#x27;1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SAFE_RM_DENIED_PATH</td>
+          <td class="code"><pre>&#x27;/Users/lvzhe/github/DjangoBlog/.vscode:/Users/lvzhe/github/DjangoBlog/.trae:/Users/lvzhe/github/DjangoBlog/.git&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SAFE_RM_PROTECTION_FLAG</td>
+          <td class="code"><pre>&#x27;/tmp/safe-rm-protection-flag-ca634c90-5d58-4f1c-9a67-f0cf06fe0337&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SAFE_RM_SOURCE_FLAG</td>
+          <td class="code"><pre>&#x27;/tmp/safe-rm-source-flag-b4aab63e-b3ad-4e5d-8c18-5f1f4743e525&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SCRIPT_NAME</td>
+          <td class="code"><pre>&#x27;&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_NAME</td>
+          <td class="code"><pre>&#x27;1.0.0.127.in-addr.arpa&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_PORT</td>
+          <td class="code"><pre>&#x27;8000&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_PROTOCOL</td>
+          <td class="code"><pre>&#x27;HTTP/1.1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_SOFTWARE</td>
+          <td class="code"><pre>&#x27;WSGIServer/0.2&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SHELL</td>
+          <td class="code"><pre>&#x27;/bin/zsh&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SHLVL</td>
+          <td class="code"><pre>&#x27;1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SSH_AUTH_SOCK</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TERM</td>
+          <td class="code"><pre>&#x27;xterm-256color&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TERM_PRODUCT</td>
+          <td class="code"><pre>&#x27;Trae&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TERM_PROGRAM</td>
+          <td class="code"><pre>&#x27;vscode&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TERM_PROGRAM_VERSION</td>
+          <td class="code"><pre>&#x27;1.104.3&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TMPDIR</td>
+          <td class="code"><pre>&#x27;/var/folders/0v/00z8xs5s7sj3s68svfvhpvwh0000gn/T/&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TRAE_AI_SHELL_ID</td>
+          <td class="code"><pre>&#x27;6&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TRAE_SANDBOX_CLI_PATH</td>
+          <td class="code"><pre>&#x27;/Applications/Trae CN.app/Contents/Resources/app/modules/sandbox/trae-sandbox&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TRAE_SANDBOX_CONFIG_NAME</td>
+          <td class="code"><pre>&#x27;69661402f5c506ae147990c4&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TRAE_SANDBOX_SOURCE_FLAG_PATH</td>
+          <td class="code"><pre>&#x27;/tmp/sandbox-source-flag-bb462da3-e099-409b-b2a1-b688aa7a2449&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TRAE_SANDBOX_STORAGE_PATH</td>
+          <td class="code"><pre>&#x27;/Users/lvzhe/Library/Application Support/Trae CN/ModularData/ai-agent/sandbox&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TZ</td>
+          <td class="code"><pre>&#x27;Asia/Shanghai&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USER</td>
+          <td class="code"><pre>&#x27;lvzhe&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USER_ZDOTDIR</td>
+          <td class="code"><pre>&#x27;/Users/lvzhe&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>VIRTUAL_ENV</td>
+          <td class="code"><pre>&#x27;/Users/lvzhe/github/DjangoBlog/.venv&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>VIRTUAL_ENV_PROMPT</td>
+          <td class="code"><pre>&#x27;(.venv) &#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>VSCODE_DEBUGPY_ADAPTER_ENDPOINTS</td>
+          <td class="code"><pre>&#x27;/Users/lvzhe/.trae-cn/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/.noConfigDebugAdapterEndpoints/endpoint-6ef9ae38082cc771.txt&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>VSCODE_GIT_ASKPASS_EXTRA_ARGS</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>VSCODE_GIT_ASKPASS_MAIN</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>VSCODE_GIT_ASKPASS_NODE</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>VSCODE_GIT_IPC_HANDLE</td>
+          <td class="code"><pre>&#x27;/var/folders/0v/00z8xs5s7sj3s68svfvhpvwh0000gn/T/vscode-git-1f5b31ba27.sock&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>VSCODE_INJECTION</td>
+          <td class="code"><pre>&#x27;1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>VSCODE_PROFILE_INITIALIZED</td>
+          <td class="code"><pre>&#x27;1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>VSCODE_PYTHON_AUTOACTIVATE_GUARD</td>
+          <td class="code"><pre>&#x27;1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>XPC_FLAGS</td>
+          <td class="code"><pre>&#x27;0x0&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>XPC_SERVICE_NAME</td>
+          <td class="code"><pre>&#x27;0&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ZDOTDIR</td>
+          <td class="code"><pre>&#x27;/Users/lvzhe&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ZSH</td>
+          <td class="code"><pre>&#x27;/Users/lvzhe/.oh-my-zsh&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>_</td>
+          <td class="code"><pre>&#x27;/Users/lvzhe/github/DjangoBlog/.venv/bin/python&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>__CFBundleIdentifier</td>
+          <td class="code"><pre>&#x27;cn.trae.app&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>__CF_USER_TEXT_ENCODING</td>
+          <td class="code"><pre>&#x27;0x1F5:0x19:0x34&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>http_proxy</td>
+          <td class="code"><pre>&#x27;http://127.0.0.1:7890&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>https_proxy</td>
+          <td class="code"><pre>&#x27;http://127.0.0.1:7890&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>isArchMatched</td>
+          <td class="code"><pre>&#x27;1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.errors</td>
+          <td class="code"><pre>&lt;_io.TextIOWrapper name=&#x27;&lt;stderr&gt;&#x27; mode=&#x27;w&#x27; encoding=&#x27;utf-8&#x27;&gt;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.file_wrapper</td>
+          <td class="code"><pre>&lt;class &#x27;wsgiref.util.FileWrapper&#x27;&gt;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.input</td>
+          <td class="code"><pre>&lt;django.core.handlers.wsgi.LimitedStream object at 0x10ef78400&gt;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.multiprocess</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.multithread</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.run_once</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.url_scheme</td>
+          <td class="code"><pre>&#x27;http&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.version</td>
+          <td class="code"><pre>(1, 0)</pre></td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+  <h3 id="settings-info">Settings</h3>
+  <h4>Using settings module <code>djangoblog.settings</code></h4>
+  <table class="req">
+    <thead>
+      <tr>
+        <th scope="col">Setting</th>
+        <th scope="col">Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td>ABSOLUTE_URL_OVERRIDES</td>
+          <td class="code"><pre>{}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ACTIVE_PLUGINS</td>
+          <td class="code"><pre>[&#x27;article_copyright&#x27;,
+ &#x27;reading_time&#x27;,
+ &#x27;external_links&#x27;,
+ &#x27;view_count&#x27;,
+ &#x27;seo_optimizer&#x27;,
+ &#x27;image_lazy_loading&#x27;,
+ &#x27;article_recommendation&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ADMINS</td>
+          <td class="code"><pre>[(&#x27;admin&#x27;, &#x27;admin@admin.com&#x27;)]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ALLOWED_HOSTS</td>
+          <td class="code"><pre>[&#x27;*&#x27;, &#x27;127.0.0.1&#x27;, &#x27;example.com&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>APPEND_SLASH</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>AUTHENTICATION_BACKENDS</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>AUTH_PASSWORD_VALIDATORS</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>AUTH_USER_MODEL</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>BAIDU_NOTIFY_URL</td>
+          <td class="code"><pre>&#x27;http://data.zz.baidu.com/urls?site=https://www.lylinux.net&amp;token=1uAOGrMsUm5syDGn&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>BASE_DIR</td>
+          <td class="code"><pre>PosixPath(&#x27;/Users/lvzhe/github/DjangoBlog&#x27;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>BOOTSTRAP_COLOR_TYPES</td>
+          <td class="code"><pre>[&#x27;default&#x27;, &#x27;primary&#x27;, &#x27;success&#x27;, &#x27;info&#x27;, &#x27;warning&#x27;, &#x27;danger&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CACHES</td>
+          <td class="code"><pre>{&#x27;default&#x27;: {&#x27;BACKEND&#x27;: &#x27;django.core.cache.backends.locmem.LocMemCache&#x27;,
+             &#x27;LOCATION&#x27;: &#x27;unique-snowflake&#x27;,
+             &#x27;TIMEOUT&#x27;: 10800}}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CACHE_CONTROL_MAX_AGE</td>
+          <td class="code"><pre>2592000</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CACHE_MIDDLEWARE_ALIAS</td>
+          <td class="code"><pre>&#x27;default&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CACHE_MIDDLEWARE_KEY_PREFIX</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CACHE_MIDDLEWARE_SECONDS</td>
+          <td class="code"><pre>600</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESSORS</td>
+          <td class="code"><pre>{&#x27;css&#x27;: &#x27;compressor.css.CssCompressor&#x27;, &#x27;js&#x27;: &#x27;compressor.js.JsCompressor&#x27;}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_CACHEABLE_PRECOMPILERS</td>
+          <td class="code"><pre>()</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_CACHE_BACKEND</td>
+          <td class="code"><pre>&#x27;default&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_CACHE_KEY_FUNCTION</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_CLEAN_CSS_ARGUMENTS</td>
+          <td class="code"><pre>&#x27;&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_CLEAN_CSS_BINARY</td>
+          <td class="code"><pre>&#x27;cleancss&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_CLOSURE_COMPILER_ARGUMENTS</td>
+          <td class="code"><pre>&#x27;&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_CLOSURE_COMPILER_BINARY</td>
+          <td class="code"><pre>&#x27;java -jar compiler.jar&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_CSS_COMPRESSOR</td>
+          <td class="code"><pre>&#x27;compressor.css.CssCompressor&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_CSS_FILTERS</td>
+          <td class="code"><pre>[&#x27;compressor.filters.css_default.CssAbsoluteFilter&#x27;,
+ &#x27;compressor.filters.cssmin.CSSCompressorFilter&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_CSS_HASHING_METHOD</td>
+          <td class="code"><pre>&#x27;mtime&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_DATA_URI_MAX_SIZE</td>
+          <td class="code"><pre>1024</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_DEBUG_TOGGLE</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_ENABLED</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_FILTERS</td>
+          <td class="code"><pre>{&#x27;css&#x27;: [&#x27;compressor.filters.css_default.CssAbsoluteFilter&#x27;,
+         &#x27;compressor.filters.cssmin.rCSSMinFilter&#x27;],
+ &#x27;js&#x27;: [&#x27;compressor.filters.jsmin.rJSMinFilter&#x27;]}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_JINJA2_GET_ENVIRONMENT</td>
+          <td class="code"><pre>&lt;function CompressorConf.JINJA2_GET_ENVIRONMENT at 0x10bbb8040&gt;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_JS_COMPRESSOR</td>
+          <td class="code"><pre>&#x27;compressor.js.JsCompressor&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_JS_FILTERS</td>
+          <td class="code"><pre>[&#x27;compressor.filters.jsmin.SlimItFilter&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_JS_HASHING_METHOD</td>
+          <td class="code"><pre>&#x27;mtime&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_MINT_DELAY</td>
+          <td class="code"><pre>30</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_MTIME_DELAY</td>
+          <td class="code"><pre>10</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_OFFLINE</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_OFFLINE_CONTEXT</td>
+          <td class="code"><pre>{&#x27;STATIC_URL&#x27;: &#x27;/static/&#x27;}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_OFFLINE_MANIFEST</td>
+          <td class="code"><pre>&#x27;manifest.json&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_OFFLINE_MANIFEST_STORAGE</td>
+          <td class="code"><pre>&#x27;compressor.storage.OfflineManifestFileStorage&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_OFFLINE_MANIFEST_STORAGE_ALIAS</td>
+          <td class="code"><pre>&#x27;compressor-offine&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_OFFLINE_TIMEOUT</td>
+          <td class="code"><pre>31536000</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_OUTPUT_DIR</td>
+          <td class="code"><pre>&#x27;compressed&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_PARSER</td>
+          <td class="code"><pre>&#x27;compressor.parser.AutoSelectParser&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_PRECOMPILERS</td>
+          <td class="code"><pre>((&#x27;text/x-scss&#x27;, &#x27;django_libsass.SassCompiler&#x27;),
+ (&#x27;text/x-sass&#x27;, &#x27;django_libsass.SassCompiler&#x27;))</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_REBUILD_TIMEOUT</td>
+          <td class="code"><pre>2592000</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_ROOT</td>
+          <td class="code"><pre>&#x27;/Users/lvzhe/github/DjangoBlog/collectedstatic&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_STORAGE</td>
+          <td class="code"><pre>&#x27;compressor.storage.CompressorFileStorage&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_STORAGE_ALIAS</td>
+          <td class="code"><pre>&#x27;compressor&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_TEMPLATE_FILTER_CONTEXT</td>
+          <td class="code"><pre>{&#x27;STATIC_URL&#x27;: &#x27;/static/&#x27;}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_URL</td>
+          <td class="code"><pre>&#x27;/static/&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_URL_PLACEHOLDER</td>
+          <td class="code"><pre>&#x27;/__compressor_url_placeholder__/&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_VERBOSE</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_YUGLIFY_BINARY</td>
+          <td class="code"><pre>&#x27;yuglify&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_YUGLIFY_CSS_ARGUMENTS</td>
+          <td class="code"><pre>&#x27;--terminal&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_YUGLIFY_JS_ARGUMENTS</td>
+          <td class="code"><pre>&#x27;--terminal&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_YUI_BINARY</td>
+          <td class="code"><pre>&#x27;java -jar yuicompressor.jar&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_YUI_CSS_ARGUMENTS</td>
+          <td class="code"><pre>&#x27;&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMPRESS_YUI_JS_ARGUMENTS</td>
+          <td class="code"><pre>&#x27;&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_AGE</td>
+          <td class="code"><pre>31449600</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_DOMAIN</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_HTTPONLY</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_NAME</td>
+          <td class="code"><pre>&#x27;csrftoken&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_PATH</td>
+          <td class="code"><pre>&#x27;/&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_SAMESITE</td>
+          <td class="code"><pre>&#x27;Lax&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_SECURE</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_FAILURE_VIEW</td>
+          <td class="code"><pre>&#x27;django.views.csrf.csrf_failure&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_HEADER_NAME</td>
+          <td class="code"><pre>&#x27;HTTP_X_CSRFTOKEN&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_TRUSTED_ORIGINS</td>
+          <td class="code"><pre>[&#x27;http://example.com&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_USE_SESSIONS</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATABASES</td>
+          <td class="code"><pre>{&#x27;default&#x27;: {&#x27;ATOMIC_REQUESTS&#x27;: False,
+             &#x27;AUTOCOMMIT&#x27;: True,
+             &#x27;CONN_HEALTH_CHECKS&#x27;: False,
+             &#x27;CONN_MAX_AGE&#x27;: 0,
+             &#x27;ENGINE&#x27;: &#x27;django.db.backends.sqlite3&#x27;,
+             &#x27;HOST&#x27;: &#x27;&#x27;,
+             &#x27;NAME&#x27;: &#x27;/Users/lvzhe/github/DjangoBlog/db.sqlite3&#x27;,
+             &#x27;OPTIONS&#x27;: {},
+             &#x27;PASSWORD&#x27;: &#x27;********************&#x27;,
+             &#x27;PORT&#x27;: &#x27;&#x27;,
+             &#x27;TEST&#x27;: {&#x27;CHARSET&#x27;: None,
+                      &#x27;COLLATION&#x27;: None,
+                      &#x27;MIGRATE&#x27;: True,
+                      &#x27;MIRROR&#x27;: None,
+                      &#x27;NAME&#x27;: None},
+             &#x27;TIME_ZONE&#x27;: None,
+             &#x27;USER&#x27;: &#x27;&#x27;}}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATABASE_ROUTERS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATA_UPLOAD_MAX_MEMORY_SIZE</td>
+          <td class="code"><pre>2621440</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATA_UPLOAD_MAX_NUMBER_FIELDS</td>
+          <td class="code"><pre>1000</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATA_UPLOAD_MAX_NUMBER_FILES</td>
+          <td class="code"><pre>100</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATETIME_FORMAT</td>
+          <td class="code"><pre>&#x27;N j, Y, P&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATETIME_INPUT_FORMATS</td>
+          <td class="code"><pre>[&#x27;%Y-%m-%d %H:%M:%S&#x27;,
+ &#x27;%Y-%m-%d %H:%M:%S.%f&#x27;,
+ &#x27;%Y-%m-%d %H:%M&#x27;,
+ &#x27;%m/%d/%Y %H:%M:%S&#x27;,
+ &#x27;%m/%d/%Y %H:%M:%S.%f&#x27;,
+ &#x27;%m/%d/%Y %H:%M&#x27;,
+ &#x27;%m/%d/%y %H:%M:%S&#x27;,
+ &#x27;%m/%d/%y %H:%M:%S.%f&#x27;,
+ &#x27;%m/%d/%y %H:%M&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATE_FORMAT</td>
+          <td class="code"><pre>&#x27;N j, Y&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATE_INPUT_FORMATS</td>
+          <td class="code"><pre>[&#x27;%Y-%m-%d&#x27;,
+ &#x27;%m/%d/%Y&#x27;,
+ &#x27;%m/%d/%y&#x27;,
+ &#x27;%b %d %Y&#x27;,
+ &#x27;%b %d, %Y&#x27;,
+ &#x27;%d %b %Y&#x27;,
+ &#x27;%d %b, %Y&#x27;,
+ &#x27;%B %d %Y&#x27;,
+ &#x27;%B %d, %Y&#x27;,
+ &#x27;%d %B %Y&#x27;,
+ &#x27;%d %B, %Y&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATE_TIME_FORMAT</td>
+          <td class="code"><pre>&#x27;%Y-%m-%d&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEBUG</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEBUG_PROPAGATE_EXCEPTIONS</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DECIMAL_SEPARATOR</td>
+          <td class="code"><pre>&#x27;.&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_AUTO_FIELD</td>
+          <td class="code"><pre>&#x27;django.db.models.BigAutoField&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_CHARSET</td>
+          <td class="code"><pre>&#x27;utf-8&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_EXCEPTION_REPORTER</td>
+          <td class="code"><pre>&#x27;django.views.debug.ExceptionReporter&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_EXCEPTION_REPORTER_FILTER</td>
+          <td class="code"><pre>&#x27;django.views.debug.SafeExceptionReporterFilter&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_FROM_EMAIL</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_INDEX_TABLESPACE</td>
+          <td class="code"><pre>&#x27;&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_TABLESPACE</td>
+          <td class="code"><pre>&#x27;&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DISALLOWED_USER_AGENTS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_BACKEND</td>
+          <td class="code"><pre>&#x27;django.core.mail.backends.smtp.EmailBackend&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_HOST</td>
+          <td class="code"><pre>&#x27;smtp.mxhichina.com&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_HOST_PASSWORD</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_HOST_USER</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_PORT</td>
+          <td class="code"><pre>465</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_SSL_CERTFILE</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_SSL_KEYFILE</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_SUBJECT_PREFIX</td>
+          <td class="code"><pre>&#x27;[Django] &#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_TIMEOUT</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_USE_LOCALTIME</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_USE_SSL</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_USE_TLS</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_UPLOAD_DIRECTORY_PERMISSIONS</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_UPLOAD_HANDLERS</td>
+          <td class="code"><pre>[&#x27;django.core.files.uploadhandler.MemoryFileUploadHandler&#x27;,
+ &#x27;django.core.files.uploadhandler.TemporaryFileUploadHandler&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_UPLOAD_MAX_MEMORY_SIZE</td>
+          <td class="code"><pre>2621440</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_UPLOAD_PERMISSIONS</td>
+          <td class="code"><pre>420</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_UPLOAD_TEMP_DIR</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FIRST_DAY_OF_WEEK</td>
+          <td class="code"><pre>0</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FIXTURE_DIRS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FORCE_SCRIPT_NAME</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FORMAT_MODULE_PATH</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FORM_RENDERER</td>
+          <td class="code"><pre>&#x27;django.forms.renderers.DjangoTemplates&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HAYSTACK_CONNECTIONS</td>
+          <td class="code"><pre>{&#x27;default&#x27;: {&#x27;ENGINE&#x27;: &#x27;djangoblog.whoosh_cn_backend.WhooshEngine&#x27;,
+             &#x27;PATH&#x27;: &#x27;/Users/lvzhe/github/DjangoBlog/djangoblog/whoosh_index&#x27;}}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HAYSTACK_SIGNAL_PROCESSOR</td>
+          <td class="code"><pre>&#x27;haystack.signals.RealtimeSignalProcessor&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>IGNORABLE_404_URLS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>INSTALLED_APPS</td>
+          <td class="code"><pre>[&#x27;django.contrib.admin.apps.SimpleAdminConfig&#x27;,
+ &#x27;django.contrib.auth&#x27;,
+ &#x27;django.contrib.contenttypes&#x27;,
+ &#x27;django.contrib.sessions&#x27;,
+ &#x27;django.contrib.messages&#x27;,
+ &#x27;django.contrib.staticfiles&#x27;,
+ &#x27;django.contrib.sites&#x27;,
+ &#x27;django.contrib.sitemaps&#x27;,
+ &#x27;mdeditor&#x27;,
+ &#x27;haystack&#x27;,
+ &#x27;blog&#x27;,
+ &#x27;accounts&#x27;,
+ &#x27;comments&#x27;,
+ &#x27;oauth&#x27;,
+ &#x27;servermanager&#x27;,
+ &#x27;owntracks&#x27;,
+ &#x27;compressor&#x27;,
+ &#x27;djangoblog&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>INTERNAL_IPS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGES</td>
+          <td class="code"><pre>((&#x27;en&#x27;, &#x27;英文&#x27;), (&#x27;zh-hans&#x27;, &#x27;简体中文&#x27;), (&#x27;zh-hant&#x27;, &#x27;繁体中文&#x27;))</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGES_BIDI</td>
+          <td class="code"><pre>[&#x27;he&#x27;, &#x27;ar&#x27;, &#x27;ar-dz&#x27;, &#x27;ckb&#x27;, &#x27;fa&#x27;, &#x27;ug&#x27;, &#x27;ur&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_CODE</td>
+          <td class="code"><pre>&#x27;zh-hans&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_COOKIE_AGE</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_COOKIE_DOMAIN</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_COOKIE_HTTPONLY</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_COOKIE_NAME</td>
+          <td class="code"><pre>&#x27;django_language&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_COOKIE_PATH</td>
+          <td class="code"><pre>&#x27;/&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_COOKIE_SAMESITE</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_COOKIE_SECURE</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOCALE_PATHS</td>
+          <td class="code"><pre>(&#x27;/Users/lvzhe/github/DjangoBlog/locale&#x27;,)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGGING</td>
+          <td class="code"><pre>{&#x27;disable_existing_loggers&#x27;: False,
+ &#x27;filters&#x27;: {&#x27;require_debug_false&#x27;: {&#x27;()&#x27;: &#x27;django.utils.log.RequireDebugFalse&#x27;},
+             &#x27;require_debug_true&#x27;: {&#x27;()&#x27;: &#x27;django.utils.log.RequireDebugTrue&#x27;}},
+ &#x27;formatters&#x27;: {&#x27;verbose&#x27;: {&#x27;format&#x27;: &#x27;[%(asctime)s] %(levelname)s &#x27;
+                                      &#x27;[%(name)s.%(funcName)s:%(lineno)d &#x27;
+                                      &#x27;%(module)s] %(message)s&#x27;}},
+ &#x27;handlers&#x27;: {&#x27;console&#x27;: {&#x27;class&#x27;: &#x27;logging.StreamHandler&#x27;,
+                          &#x27;filters&#x27;: [&#x27;require_debug_true&#x27;],
+                          &#x27;formatter&#x27;: &#x27;verbose&#x27;,
+                          &#x27;level&#x27;: &#x27;DEBUG&#x27;},
+              &#x27;log_file&#x27;: {&#x27;backupCount&#x27;: 5,
+                           &#x27;class&#x27;: &#x27;logging.handlers.TimedRotatingFileHandler&#x27;,
+                           &#x27;delay&#x27;: True,
+                           &#x27;encoding&#x27;: &#x27;utf-8&#x27;,
+                           &#x27;filename&#x27;: &#x27;/Users/lvzhe/github/DjangoBlog/logs/djangoblog.log&#x27;,
+                           &#x27;formatter&#x27;: &#x27;verbose&#x27;,
+                           &#x27;interval&#x27;: 1,
+                           &#x27;level&#x27;: &#x27;INFO&#x27;,
+                           &#x27;when&#x27;: &#x27;D&#x27;},
+              &#x27;mail_admins&#x27;: {&#x27;class&#x27;: &#x27;django.utils.log.AdminEmailHandler&#x27;,
+                              &#x27;filters&#x27;: [&#x27;require_debug_false&#x27;],
+                              &#x27;level&#x27;: &#x27;ERROR&#x27;},
+              &#x27;null&#x27;: {&#x27;class&#x27;: &#x27;logging.NullHandler&#x27;}},
+ &#x27;loggers&#x27;: {&#x27;djangoblog&#x27;: {&#x27;handlers&#x27;: [&#x27;log_file&#x27;, &#x27;console&#x27;],
+                            &#x27;level&#x27;: &#x27;INFO&#x27;,
+                            &#x27;propagate&#x27;: True}},
+ &#x27;root&#x27;: {&#x27;handlers&#x27;: [&#x27;console&#x27;, &#x27;log_file&#x27;], &#x27;level&#x27;: &#x27;INFO&#x27;},
+ &#x27;version&#x27;: 1}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGGING_CONFIG</td>
+          <td class="code"><pre>&#x27;logging.config.dictConfig&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGIN_REDIRECT_URL</td>
+          <td class="code"><pre>&#x27;/accounts/profile/&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGIN_URL</td>
+          <td class="code"><pre>&#x27;/login/&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGOUT_REDIRECT_URL</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOG_PATH</td>
+          <td class="code"><pre>&#x27;/Users/lvzhe/github/DjangoBlog/logs&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MANAGERS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MEDIA_ROOT</td>
+          <td class="code"><pre>&#x27;/Users/lvzhe/github/DjangoBlog/uploads&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MEDIA_URL</td>
+          <td class="code"><pre>&#x27;/media/&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MESSAGE_STORAGE</td>
+          <td class="code"><pre>&#x27;django.contrib.messages.storage.fallback.FallbackStorage&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MIDDLEWARE</td>
+          <td class="code"><pre>[&#x27;django.middleware.security.SecurityMiddleware&#x27;,
+ &#x27;django.contrib.sessions.middleware.SessionMiddleware&#x27;,
+ &#x27;django.middleware.locale.LocaleMiddleware&#x27;,
+ &#x27;django.middleware.gzip.GZipMiddleware&#x27;,
+ &#x27;django.middleware.common.CommonMiddleware&#x27;,
+ &#x27;django.middleware.csrf.CsrfViewMiddleware&#x27;,
+ &#x27;django.contrib.auth.middleware.AuthenticationMiddleware&#x27;,
+ &#x27;django.contrib.messages.middleware.MessageMiddleware&#x27;,
+ &#x27;django.middleware.clickjacking.XFrameOptionsMiddleware&#x27;,
+ &#x27;django.middleware.http.ConditionalGetMiddleware&#x27;,
+ &#x27;blog.middleware.OnlineMiddleware&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MIGRATION_MODULES</td>
+          <td class="code"><pre>{}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MONTH_DAY_FORMAT</td>
+          <td class="code"><pre>&#x27;F j&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>NUMBER_GROUPING</td>
+          <td class="code"><pre>0</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PAGINATE_BY</td>
+          <td class="code"><pre>10</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PASSWORD_HASHERS</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PASSWORD_RESET_TIMEOUT</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PLUGINS_DIR</td>
+          <td class="code"><pre>PosixPath(&#x27;/Users/lvzhe/github/DjangoBlog/plugins&#x27;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PREPEND_WWW</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ROOT_URLCONF</td>
+          <td class="code"><pre>&#x27;djangoblog.urls&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECRET_KEY</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECRET_KEY_FALLBACKS</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_CONTENT_TYPE_NOSNIFF</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_CROSS_ORIGIN_OPENER_POLICY</td>
+          <td class="code"><pre>&#x27;same-origin&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_CSP</td>
+          <td class="code"><pre>{}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_CSP_REPORT_ONLY</td>
+          <td class="code"><pre>{}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_HSTS_INCLUDE_SUBDOMAINS</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_HSTS_PRELOAD</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_HSTS_SECONDS</td>
+          <td class="code"><pre>0</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_PROXY_SSL_HEADER</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_REDIRECT_EXEMPT</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_REFERRER_POLICY</td>
+          <td class="code"><pre>&#x27;same-origin&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_SSL_HOST</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_SSL_REDIRECT</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_EMAIL</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_CACHE_ALIAS</td>
+          <td class="code"><pre>&#x27;default&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_AGE</td>
+          <td class="code"><pre>1209600</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_DOMAIN</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_HTTPONLY</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_NAME</td>
+          <td class="code"><pre>&#x27;sessionid&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_PATH</td>
+          <td class="code"><pre>&#x27;/&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_SAMESITE</td>
+          <td class="code"><pre>&#x27;Lax&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_SECURE</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_ENGINE</td>
+          <td class="code"><pre>&#x27;django.contrib.sessions.backends.db&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_EXPIRE_AT_BROWSER_CLOSE</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_FILE_PATH</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_SAVE_EVERY_REQUEST</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_SERIALIZER</td>
+          <td class="code"><pre>&#x27;django.contrib.sessions.serializers.JSONSerializer&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SETTINGS_MODULE</td>
+          <td class="code"><pre>&#x27;djangoblog.settings&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SHORT_DATETIME_FORMAT</td>
+          <td class="code"><pre>&#x27;m/d/Y P&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SHORT_DATE_FORMAT</td>
+          <td class="code"><pre>&#x27;m/d/Y&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SIGNING_BACKEND</td>
+          <td class="code"><pre>&#x27;django.core.signing.TimestampSigner&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SILENCED_SYSTEM_CHECKS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SITE_ID</td>
+          <td class="code"><pre>1</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATICFILES</td>
+          <td class="code"><pre>&#x27;/Users/lvzhe/github/DjangoBlog/static&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATICFILES_DIRS</td>
+          <td class="code"><pre>[&#x27;/Users/lvzhe/github/DjangoBlog/plugins&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATICFILES_FINDERS</td>
+          <td class="code"><pre>(&#x27;django.contrib.staticfiles.finders.FileSystemFinder&#x27;,
+ &#x27;django.contrib.staticfiles.finders.AppDirectoriesFinder&#x27;,
+ &#x27;compressor.finders.CompressorFinder&#x27;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATICFILES_STORAGE</td>
+          <td class="code"><pre>&#x27;django.contrib.staticfiles.storage.ManifestStaticFilesStorage&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATIC_ROOT</td>
+          <td class="code"><pre>&#x27;/Users/lvzhe/github/DjangoBlog/collectedstatic&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATIC_URL</td>
+          <td class="code"><pre>&#x27;/static/&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STORAGES</td>
+          <td class="code"><pre>{&#x27;default&#x27;: {&#x27;BACKEND&#x27;: &#x27;django.core.files.storage.FileSystemStorage&#x27;},
+ &#x27;staticfiles&#x27;: {&#x27;BACKEND&#x27;: &#x27;django.contrib.staticfiles.storage.StaticFilesStorage&#x27;}}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TASKS</td>
+          <td class="code"><pre>{&#x27;default&#x27;: {&#x27;BACKEND&#x27;: &#x27;django.tasks.backends.immediate.ImmediateBackend&#x27;}}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TEMPLATES</td>
+          <td class="code"><pre>[{&#x27;APP_DIRS&#x27;: True,
+  &#x27;BACKEND&#x27;: &#x27;django.template.backends.django.DjangoTemplates&#x27;,
+  &#x27;DIRS&#x27;: [&#x27;/Users/lvzhe/github/DjangoBlog/templates&#x27;],
+  &#x27;OPTIONS&#x27;: {&#x27;context_processors&#x27;: [&#x27;django.template.context_processors.debug&#x27;,
+                                     &#x27;django.template.context_processors.request&#x27;,
+                                     &#x27;django.contrib.auth.context_processors.auth&#x27;,
+                                     &#x27;django.contrib.messages.context_processors.messages&#x27;,
+                                     &#x27;blog.context_processors.seo_processor&#x27;]}}]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TESTING</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TEST_NON_SERIALIZED_APPS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TEST_RUNNER</td>
+          <td class="code"><pre>&#x27;django.test.runner.DiscoverRunner&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>THOUSAND_SEPARATOR</td>
+          <td class="code"><pre>&#x27;,&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TIME_FORMAT</td>
+          <td class="code"><pre>&#x27;%Y-%m-%d %H:%M:%S&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TIME_INPUT_FORMATS</td>
+          <td class="code"><pre>[&#x27;%H:%M:%S&#x27;, &#x27;%H:%M:%S.%f&#x27;, &#x27;%H:%M&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TIME_ZONE</td>
+          <td class="code"><pre>&#x27;Asia/Shanghai&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>URLIZE_ASSUME_HTTPS</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_I18N</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_L10N</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_THOUSAND_SEPARATOR</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_TZ</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_X_FORWARDED_HOST</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_X_FORWARDED_PORT</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>WSGI_APPLICATION</td>
+          <td class="code"><pre>&#x27;djangoblog.wsgi.application&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>WXADMIN</td>
+          <td class="code"><pre>&#x27;995F03AC401D6CABABAEF756FC4D43C7&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>X_FRAME_OPTIONS</td>
+          <td class="code"><pre>&#x27;SAMEORIGIN&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>YEAR_MONTH_FORMAT</td>
+          <td class="code"><pre>&#x27;F Y&#x27;</pre></td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+</div>
+</main>
+
+
+  <footer id="explanation">
+    <p>
+      You’re seeing this error because you have <code>DEBUG = True</code> in your
+      Django settings file. Change that to <code>False</code>, and Django will
+      display a standard page generated by the handler for this status code.
+    </p>
+  </footer>
+
+</body>
+</html>
