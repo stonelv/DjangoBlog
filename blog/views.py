@@ -124,8 +124,7 @@ class ArticleDetailView(DetailView):
         page = self.request.GET.get('comment_page', '1')
         if not page.isnumeric():
             page = 1
-        else:
-            # page = int(page)
+
             if page < 1:
                 page = 1
             if page > paginator.num_pages:

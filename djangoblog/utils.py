@@ -168,6 +168,7 @@ def get_blog_setting():
             setting.comment_need_review = False
             setting.save()
         value = BlogSettings.objects.first()
+        value.sidebar_comment_count = str(value.sidebar_comment_count)
         logger.info('set cache get_blog_setting')
         cache.set('get_blog_setting', value)
         return value

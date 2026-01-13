@@ -227,7 +227,7 @@ def load_sidebar(user, linktype):
             '-id')[:blogsetting.sidebar_comment_count]
         # 标签云 计算字体大小
         # 根据总数计算出平均值 大小为 (数目/平均值)*步长
-        increment = '5'
+        increment = 5
         tags = Tag.objects.all()
         sidebar_tags = None
         if tags and len(tags) > 0:
