@@ -168,7 +168,14 @@ def get_blog_setting():
             setting.comment_need_review = False
             setting.save()
         value = BlogSettings.objects.first()
-        value.sidebar_comment_count = str(value.sidebar_comment_count)
+        # 确保所有数值类型的属性都是正确的类型
+        try:
+            value.sidebar_comment_count = int(value.sidebar_comment_count)
+            value.article_comment_count = int(value.article_comment_count)
+            value.sidebar_article_count = int(value.sidebar_article_count)
+            value.article_sub_length = int(value.article_sub_length)
+        except (ValueError, TypeError):
+            pass
         logger.info('set cache get_blog_setting')
         cache.set('get_blog_setting', value)
         return value

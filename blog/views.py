@@ -45,7 +45,10 @@ class ArticleListView(ListView):
         page_kwarg = self.page_kwarg
         page = self.kwargs.get(
             page_kwarg) or self.request.GET.get(page_kwarg) or 1
-        return page
+        try:
+            return int(page)
+        except (ValueError, TypeError):
+            return 1
 
     def get_queryset_cache_key(self):
         """
@@ -122,13 +125,15 @@ class ArticleDetailView(DetailView):
         blog_setting = get_blog_setting()
         paginator = Paginator(parent_comments, blog_setting.article_comment_count)
         page = self.request.GET.get('comment_page', '1')
-        if not page.isnumeric():
+        try:
+            page = int(page)
+        except (ValueError, TypeError):
             page = 1
 
-            if page < 1:
-                page = 1
-            if page > paginator.num_pages:
-                page = paginator.num_pages
+        if page < 1:
+            page = 1
+        if page > paginator.num_pages:
+            page = paginator.num_pages
 
         p_comments = paginator.page(page)
         next_page = p_comments.next_page_number() if p_comments.has_next() else None
